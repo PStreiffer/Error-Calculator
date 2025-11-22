@@ -5,9 +5,6 @@
 #include <string>
 using namespace std;
 
-errval functiondo(errval (*f)(vector<errval>), vector<errval> x){
-    return f(x);
-}
 
 vector<vector<double>> functionparse(string input){
     vector<char> arglist = {'+','-','*','/','^', '(', ')','='};
@@ -30,6 +27,19 @@ vector<vector<double>> functionparse(string input){
             i = n-1;
             
             argpostype.push_back({0,stod(s)});
+        }
+        if(isalpha(input[i])&& input[i]!='E'&&input[i]!='e'){ //alpha concatenation
+            string s = "";
+            s+=input[i];
+            int n = i+1;
+            while(isalpha(input[n])&& input[n]!='E'&&input[n]!='e'){
+                s+=static_cast<char>(input[n]);
+                n++;
+            } if (input[n]=='('){
+            }
+            i = n-1;
+            
+            argpostype.push_back({0,});
         }
     }
     int parennum  = 0;
@@ -55,7 +65,7 @@ vector<vector<double>> functionparse(string input){
     
     }
     } catch (int s){
-        cout<<"Invalid Parentheses";
+        cout<<"Mismatched Parentheses";
     }
     
     

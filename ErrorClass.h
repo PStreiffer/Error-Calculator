@@ -77,9 +77,8 @@ errval errval::operator/(errval rhs){ //actual definition of divison
         [](vector<double> a){return a[0]/a[1];}, //define lambda function that divides two values
         {*this, rhs}
     );
-    double val1 = val / rhs.val;
     
-    return errval(val1,err1);
+    return errval(val / rhs.val,err1);
 }
 
 errval sqrt(errval x){
