@@ -9,6 +9,6 @@ int main(){
     errval y(5,6);
     errval z = sqrt(x*2*y);
     cout <<z<<"\n";
-    cout<< funclist[0]({z});
+    cout<< funclist[1]({z});
     return 0;
 }
