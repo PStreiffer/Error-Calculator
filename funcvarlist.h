@@ -3,6 +3,7 @@
 #include <string>
 #include "ErrorClass.h"
 #include <cmath>
+#pragma once
 using namespace std;
 
 class createdfunc {
