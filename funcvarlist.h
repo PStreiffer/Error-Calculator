@@ -17,9 +17,23 @@ class createdfunc {
         return namedfunc(input);
     }
 };
+class createdvar {
+    public:
+    char name;
+    errval value;
+    createdvar(char namein, errval valin){
+        name = namein;
+        value = valin;
+    }
+};
 
-vector<createdfunc> funclist = {createdfunc("sqrt",[](vector<errval> a){return sqrt(a[0]);}),
+vector<createdfunc> funclist = {
+                                createdfunc("sqrt",[](vector<errval> a){return sqrt(a[0]);}),
                                 createdfunc("sin",[](vector<errval> a){return sin(a[0]);}),
                                 createdfunc("cos",[](vector<errval> a){return cos(a[0]);}),
                                 createdfunc("tan",[](vector<errval> a){return tan(a[0]);})
+                            };
+
+vector<createdvar> varlist = {
+                                createdvar('e',errval(exp(1.0),0.0))
                             };
