@@ -20,13 +20,25 @@ class errval{
             double err1 = vectorsum({err,rhs.err}); //take vectorsum, as addition always gives error equal to vectorsum
             return errval(val1,err1);
         }
+        errval operator+(double rhs){
+            return operator+(errval(rhs));
+        }
         errval operator-(errval rhs){ //same as addition
             double val1 = val - rhs.val;
             double err1 = vectorsum({err,rhs.err});
             return errval(val1,err1);
         }
+        errval operator-(double rhs){
+            return operator-(errval(rhs));
+        }
         errval operator*(errval rhs); //initialize * operator
+        errval operator*(double rhs){
+            return operator*(errval(rhs));
+        }
         errval operator/(errval rhs); //initialize division
+        errval operator/(double rhs){
+            return operator/(errval(rhs));
+        }
         
         errval operator+=(errval rhs){
             *this = *this + rhs;
@@ -80,7 +92,6 @@ errval errval::operator/(errval rhs){ //actual definition of divison
     
     return errval(val / rhs.val,err1);
 }
-
 errval sqrt(errval x){
     return errval(sqrt(x.val), funcerr([](vector<double> a){return sqrt(a[0]);}, {x}));
 }
