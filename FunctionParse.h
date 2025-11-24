@@ -13,10 +13,9 @@ vector<vector<double>> functionparse(string input){
     vector<char> arglist = {'+','-','*','/','^', '(', ')','='};
 
     vector<vector<double>> argpostype = {};
-    int equalnum = string::npos;
-    //+-*/^ operator recognition & number concat
-    for (int i = 0; i<input.length();i++){ //identify basic operators
-        for(int argnum=0; argnum < arglist.size();argnum++){
+    signed int equalnum = -1;
+    for (int i = 0; i<input.length();i++){ //identify per-character operators
+        for(int argnum=0; argnum < arglist.size();argnum++){ //basic operators in arglist
             if(isdigit(input[i])||isalpha(input[i])||input[i]=='.'){break;}
             if(input[i]==arglist[argnum]){
                 argpostype.push_back({static_cast<double>(arglist[argnum])});
@@ -27,7 +26,7 @@ vector<vector<double>> functionparse(string input){
                     try{
                     for(int i2 = size(argpostype)-2;i2>=0;i2--){
                         if(argpostype[i2][0] == '(' && size(argpostype[i2])==1){
-                            argpostype[i2].push_back(size(argpostype)-1);
+                            argpostype[i2].push_back(size(argpostype)-1-i2);
                             break;
                         }
                         if(i2 == 0){
@@ -63,14 +62,13 @@ vector<vector<double>> functionparse(string input){
             for(int n = i+1;isalpha(input[n])&& input[n]!='E';n++){
                 s+=static_cast<char>(input[n]);
             }
-            if (equalnum == string::npos){
+            if (equalnum == -1){
             for(int charnum = 0; charnum < size(input);charnum++){
                 if (input[charnum]=='='){equalnum = charnum; break;}
             } 
             }
                 //function/var creation handling
-                if(i+size(s) <= equalnum){
-                    
+                if(static_cast<signed int>(i+size(s)) <= equalnum){           
                     if(input[i+size(s)]=='('){ //function creation
                         if(size(argpostype)>0){
                         cout<<"Does not support explicit functions\n";
@@ -84,14 +82,14 @@ vector<vector<double>> functionparse(string input){
                     } else if (input[i+1]==',' || input[i+1]==')'){ //function variable creation
                         if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
                         varlist.push_back(createdvar(s[0],errval(0)));
-                        argpostype.push_back({-4,static_cast<double>(size(varlist))});
+                        argpostype.push_back({-4,static_cast<double>(size(varlist)-1)});
                         i+=size(s);
                         s.erase();
 
                     } else { //new variable creation
                         if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
                         varlist.push_back(createdvar(s[0],errval(0)));
-                        argpostype.push_back({-5,static_cast<double>(size(varlist))});
+                        argpostype.push_back({-5,static_cast<double>(size(varlist)-1)});
                         i+=size(s);
                         s.erase();
                     }
@@ -99,7 +97,6 @@ vector<vector<double>> functionparse(string input){
                 }
                 
             
-            char p = input[i];
             if(input[i+size(s)]=='('){ //function detection + removal - always a ( afterwards
             for(int funcnum = 0; funcnum <size(funclist);funcnum++){
                 if(s.find(funclist[funcnum].name)==size(s)-size(funclist[funcnum].name) && size(funclist[funcnum].name)<=size(s)){
@@ -141,6 +138,7 @@ vector<vector<double>> functionparse(string input){
             cout<<"Invalid open parentheses\n";
             return {{560}};
         }
+        //arg modification - plus minus addition
         if(argpostype[argnum][0]=='+'&&argpostype[argnum+1][0]=='-'){
             argpostype.erase(argpostype.begin()+argnum+1);
             argpostype[argnum]={'\00b1'};
@@ -148,10 +146,9 @@ vector<vector<double>> functionparse(string input){
         }
     }
     return argpostype;
-}
-/* test function
+}/*
 int main(){
-    string funcin = "a = 3+-2.00";
+    string funcin = "89.5+e-(cos(2)+7e)*((8)(2-6))";
     vector<vector<double>> c = functionparse(funcin);
     return 0;
 }
