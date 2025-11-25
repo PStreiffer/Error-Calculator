@@ -8,19 +8,39 @@ using namespace std;
 
 
 vector<vector<double>> functionparse(string input){
+    int inversepos;
     sort(funclist.begin(),funclist.end(),[](createdfunc x, createdfunc y){return size(x.name)>size(y.name);});
-
-    vector<char> arglist = {'+','-','*','/','^', '(', ')','='};
+    for (int funcnum; funcnum <size(funclist);funcnum++){
+        if(funclist[funcnum].name=="inverse"){
+            inversepos = funcnum;
+            break;
+        }
+    }
+    vector<char> arglist = {'+','*','/','^', '(', ')','='};
 
     vector<vector<double>> argpostype = {};
     signed int equalnum = -1;
     for (int i = 0; i<input.length();i++){ //identify per-character operators
         for(int argnum=0; argnum < arglist.size();argnum++){ //basic operators in arglist
+            
             if(isdigit(input[i])||isalpha(input[i])||input[i]=='.'){break;}
+            //arg modification - plus minus addition
+            if(input[i]=='+' && input[i+1]=='-'){
+                argpostype.push_back({'\00b1'});
+                i++;
+            }
+            if(input[i]=='-'){ //convert - signs into inversions, add addition
+                argpostype.push_back({-2,static_cast<double>(inversepos)});
+                if(input[i+1]!='('){
+                    argpostype.insert(argpostype.end()-1,{'+'});
+                    argpostype.push_back({'(',2,-1});
+                }
+            }
             if(input[i]==arglist[argnum]){
                 argpostype.push_back({static_cast<double>(arglist[argnum])});
                 break;
             }
+            
         }
         if(input[i] == ')'){ //paren matching
                     try{
@@ -109,7 +129,7 @@ vector<vector<double>> functionparse(string input){
             }   
             try{
             
-            for(char c: s){ //try string chars against varlist
+            for(char c: s){ //variable detection - all vars are one char, so no need to delete b/c iterate thru list
                  bool found = false;
                 for ( int varnum = 0; varnum < size(varlist); varnum++){
                     if (c == varlist[varnum].name){
@@ -134,16 +154,17 @@ vector<vector<double>> functionparse(string input){
         }
     }
     for(int argnum = 0; argnum<size(argpostype);argnum++){ //open paren verification - make sure every open paren has a closed one
-        if(argpostype[argnum][0]=='('&&size(argpostype[argnum])==1){
+        if(argpostype[argnum][0]=='('){
+            if(size(argpostype[argnum])==3){ //insert floating closed paren from inversion addition earlier
+                argpostype.insert(argpostype.begin()+argnum+argpostype[argnum][2],{')'});
+                argpostype[argnum] = {'(',argpostype[argnum][1]};
+            }
+            if(size(argpostype[argnum])==1){ //invalid open paren detection
             cout<<"Invalid open parentheses\n";
             return {{560}};
         }
-        //arg modification - plus minus addition
-        if(argpostype[argnum][0]=='+'&&argpostype[argnum+1][0]=='-'){
-            argpostype.erase(argpostype.begin()+argnum+1);
-            argpostype[argnum]={'\00b1'};
+    }
 
-        }
     }
     return argpostype;
 }/*
