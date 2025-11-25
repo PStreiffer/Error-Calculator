@@ -4,7 +4,7 @@
 #include <vector>
 #pragma once
 using namespace std;
-double h = sqrt(std::numeric_limits<double>::epsilon());
+const double h = sqrt(std::numeric_limits<double>::epsilon());
 
  double ddx(double (*f)(double),double x){
     return (f(x+h)-f(x-h))/(2*h);
