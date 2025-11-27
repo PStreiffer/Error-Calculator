@@ -33,7 +33,6 @@ class evalresult{
 
 evalresult functioneval(vector<vector<double>> arglist){
     vector<evalresult> calargs = {};
-    char p;
 /* Workflow:
 - determine if function/var definition, or if evaluation
 Function/var:
@@ -54,7 +53,7 @@ Evaluation:
         errval value = 0;
         for(int i = 0; i<size(arglist); i++){
             
-            if(arglist[i][0] == '±'){ //determine if error included: if so, evaluate before ± then vectorsum errors
+            if(arglist[i][0] == -15695){ //determine if error included: if so, evaluate before ± then vectorsum errors
                 value = functioneval(vector<vector<double>>(arglist.begin()+2,arglist.begin()+i)).erval;
                 value.err = vectorsum({value.err,arglist[size(arglist)-1][1]});
                 found = true;
@@ -81,7 +80,6 @@ Evaluation:
 
 
     for(int i = 0; i<size(arglist);i++){ //number replacement, variable replacement, function eval
-        p = arglist[i][0];
         if (arglist[i][0] == 0){ //number replacement --> errval
             calargs.push_back(evalresult(errval(arglist[i][1])));
             arglist[i] = {-9, static_cast<double>(size(calargs)-1)};
@@ -111,13 +109,16 @@ Evaluation:
             if(arglist[i-1][0] != -9 && arglist[i+1][0]!=-9){cout<<"Invalid operation: multiplying nonnumber"; return evalresult(errval(560));} //make sure arguments are correct - -9 on both sides
             calargs[arglist[i-1][1]].erval*=calargs[arglist[i+1][1]].erval;
             calargs[arglist[i+1][1]].resulttype=0;
-            arglist.erase(arglist.begin()+i,arglist.begin()+i+1);
+            arglist.erase(arglist.begin()+i,arglist.begin()+i+2);
+            i--;
         
         } else if(arglist[i][0] == '/'){ //division
             if(arglist[i-1][0] != -9 && arglist[i+1][0]!=-9){cout<<"Invalid operation: multiplying nonnumber"; return evalresult(errval(560));} //make sure arguments are correct - -9 on both sides
             calargs[arglist[i-1][1]].erval/=calargs[arglist[i+1][1]].erval;
             calargs[arglist[i+1][1]].resulttype=0;
-            arglist.erase(arglist.begin()+i,arglist.begin()+i+1);
+            calargs[arglist[i+1][1]].resulttype=0;
+            arglist.erase(arglist.begin()+i,arglist.begin()+i+2);
+            i--;
         }
     }
 
@@ -136,6 +137,9 @@ return(evalresult(errval(560)));
 //test code
 int main(){
     auto c = functionparse("a=2*(90)+-2");
-    auto e = functioneval(c);
+    functioneval(c);
+    auto d = functionparse("aecos(ae)");
+    auto e = functioneval(d).erval;
+    cout<<e;
     return 0;
 }

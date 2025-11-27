@@ -26,7 +26,7 @@ vector<vector<double>> functionparse(string input){
             if(isdigit(input[i])||isalpha(input[i])||input[i]=='.'){break;}
             //arg modification - plus minus addition
             if(input[i]=='+' && input[i+1]=='-'){
-                argpostype.push_back({'±'});
+                argpostype.push_back({-15695});
                 i++;
                 break;
             }
@@ -92,80 +92,80 @@ vector<vector<double>> functionparse(string input){
             if (equalnum == -1){
             equalnum = input.find("=");
             }
-                //function/var creation handling
-                if(static_cast<signed int>(i+size(s)) <= equalnum){   
-                    int argnum = 0;        
-                    if(input[i+size(s)]=='('){ //function creation
-                        if(size(argpostype)>0){
-                        cout<<"Does not support explicit functions\n";
-                        return {{560}};
-                        }
-                        funclist.push_back(createdfunc(s,1,[](vector<errval> x){return 0;}));
-                        argpostype.push_back({-3,static_cast<double>(size(funclist))});
-                        i+=size(s);
-                        s.erase();
-
-                    } else if (input[i+1]==',' || input[i+1]==')'){ //function variable creation
-                        if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
-                        varlist.push_back(createdvar(s[0],errval(0)));
-                        argpostype.push_back({-4,static_cast<double>(size(varlist)-1)});
-                        i+=size(s);
-                        s.erase();
-                        argnum++;
-                    } else { //new variable creation
-                        if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
-                        varlist.push_back(createdvar(s[0],errval(0)));
-                        argpostype.push_back({-5,static_cast<double>(size(varlist)-1)});
-                        i+=size(s);
-                        s.erase();
+            //function/var creation handling
+            if(static_cast<signed int>(i+size(s)) <= equalnum){   
+                int argnum = 0;        
+                if(input[i+size(s)]=='('){ //function creation
+                    if(size(argpostype)>0){
+                    cout<<"Does not support explicit functions\n";
+                    return {{560}};
                     }
-                    funclist[size(funclist)-1].argnum=argnum;
-                    i+=size(s)-1;
+                    funclist.push_back(createdfunc(s,1,[](vector<errval> x){return 0;}));
+                    argpostype.push_back({-3,static_cast<double>(size(funclist))});
+                    i+=size(s);
+                    s.erase();
+
+                } else if (input[i+1]==',' || input[i+1]==')'){ //function variable creation
+                    if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
+                    varlist.push_back(createdvar(s[0],errval(0)));
+                    argpostype.push_back({-4,static_cast<double>(size(varlist)-1)});
+                    i+=size(s);
+                    s.erase();
+                    argnum++;
+                } else { //new variable creation
+                    if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
+                    varlist.push_back(createdvar(s[0],errval(0)));
+                    argpostype.push_back({-5,static_cast<double>(size(varlist)-1)});
+                    i+=size(s);
+                    s.erase();
                 }
-                
-            
-            if(input[i+size(s)]=='('){ //function detection + removal - always a ( afterwards
-            for(int funcnum = 0; funcnum <size(funclist);funcnum++){
-                if(string(s.end()-size(funclist[funcnum].name),s.end())==funclist[funcnum].name){
-                    i+=s.size()-1;
-                    s.erase(size(s)-size(funclist[funcnum].name),size(s));
-                    funcinsert = {-1,static_cast<double>(funcnum)};
-                    break;
-                }
-            }
-            }   
-            try{
-            
-            for(char c: s){ //variable detection - all vars are one char, so no need to delete b/c iterate thru list
-                 bool found = false;
-                for ( int varnum = 0; varnum < size(varlist); varnum++){
-                    if (c == varlist[varnum].name){
-                        if(size(argpostype)>1){
-                        if(argpostype[size(argpostype)-1][0]==')'||argpostype[size(argpostype)-1][0]<=0){ //add implicit multiplication
-                            argpostype.push_back({'*'});
-                        }
-                        }
-                        argpostype.push_back({-2,static_cast<double>(varnum)});
-                        found = true;
+                funclist[size(funclist)-1].argnum=argnum;
+                i+=size(s)-1;
+            }  else{ 
+                if(input[i+size(s)]=='('){ //function detection + removal - always a ( afterwards
+                for(int funcnum = 0; funcnum <size(funclist);funcnum++){
+                    if(string(s.end()-size(funclist[funcnum].name),s.end())==funclist[funcnum].name){
+                        i+=size(funclist[funcnum].name);
+                        
+                        s.erase(size(s)-size(funclist[funcnum].name),size(s));
+                        funcinsert = {-1,static_cast<double>(funcnum)};
                         break;
                     }
-                    
                 }
-                if(!found){throw(c);}
+                }   
+                try{
+                for(char c: s){ //variable detection - all vars are one char, so no need to delete b/c iterate thru list
+                    bool found = false;
+                    for ( int varnum = 0; varnum < size(varlist); varnum++){
+                        if (c == varlist[varnum].name){
+                            if(size(argpostype)>0){
+                            if(argpostype[size(argpostype)-1][0]==')'||argpostype[size(argpostype)-1][0]<=0){ //add implicit multiplication
+                                argpostype.push_back({'*'});
+                            }
+                            }
+                            argpostype.push_back({-2,static_cast<double>(varnum)});
+                            found = true;
+                            break;
+                        }
+                        
+                    }
+                    if(!found){throw(c);}
 
-            }
-            } catch (char x){ //catch any invalid variables
-                cout<<"\'"<< x <<"\' is an invalid variable";
-                return {{560}};
-            }
-            if (funcinsert[0] != 0){ //add function into arglist
-                if(size(argpostype)>1){
-                if(argpostype[size(argpostype)-1][0]==')'||argpostype[size(argpostype)-1][0]<=0){//add implicit multiplication
-                            argpostype.push_back({'*'});
                 }
-                }  
-                argpostype.push_back(funcinsert);
-            
+                } catch (char x){ //catch any invalid variables
+                    cout<<"\'"<< x <<"\' is an invalid variable";
+                    return {{560}};
+                }
+                if (funcinsert[0] != 0){ //add function into arglist
+                    if(size(argpostype)>0){
+                    if(argpostype[size(argpostype)-1][0]==')'||argpostype[size(argpostype)-1][0]<=0){//add implicit multiplication
+                                argpostype.push_back({'*'});
+                    }
+                    }  
+                    argpostype.push_back(funcinsert);
+                
+                }
+                i+=size(s)-1;
             }
         
         }

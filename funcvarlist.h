@@ -9,9 +9,11 @@ using namespace std;
 class createdfunc {
     public:
     string name;
+    int argnum;
     function<errval(vector<errval>)> namedfunc;
-    createdfunc(string namein = " ", function<errval(vector<errval>)> functionin = [](vector<errval> x){return 0;}){
+    createdfunc(string namein = " ", int argnumin = 1, function<errval(vector<errval>)> functionin = [](vector<errval> x){return 0;}){
         name = namein;
+        argnum = argnumin;
         namedfunc = functionin;
     }
     errval operator()(vector<errval> input) {
@@ -29,13 +31,13 @@ class createdvar {
 };
 
 vector<createdfunc> funclist = {
-                                createdfunc("sqrt",[](vector<errval> a){return sqrt(a[0]);}),
-                                createdfunc("sin",[](vector<errval> a){return sin(a[0]);}),
-                                createdfunc("cos",[](vector<errval> a){return cos(a[0]);}),
-                                createdfunc("tan",[](vector<errval> a){return tan(a[0]);}),
-                                createdfunc("inverse",[](vector <errval> a){return a[0]*(-1.0);})
+                                createdfunc("sqrt",1,[](vector<errval> a){return sqrt(a[0]);}),
+                                createdfunc("sin",1,[](vector<errval> a){return sin(a[0]);}),
+                                createdfunc("cos",1,[](vector<errval> a){return cos(a[0]);}),
+                                createdfunc("tan",1,[](vector<errval> a){return tan(a[0]);}),
+                                createdfunc("inverse",1,[](vector <errval> a){return a[0]*(-1.0);})
                             };
 
 vector<createdvar> varlist = {
-                                createdvar('e',errval(exp(1.0),0.0))
+                                createdvar('e',errval(exp(1.0),1.0))
                             };

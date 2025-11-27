@@ -51,6 +51,8 @@
         "variant": "cpp",
         "xutility": "cpp",
         "xstring": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "xlocnum": "cpp",
+        "xtr1common": "cpp"
     }
 }
