@@ -16,7 +16,7 @@ vector<vector<double>> functionparse(string input){
             break;
         }
     }
-    vector<char> arglist = {'*','+','/','^', '(', ')','='};
+    vector<char> arglist = {'*','+','/','^', '(', ')','=',','};
 
     vector<vector<double>> argpostype = {};
     signed int equalnum = -1;
@@ -101,7 +101,7 @@ vector<vector<double>> functionparse(string input){
                     return {{560}};
                     }
                     funclist.push_back(createdfunc(s,1,[](vector<errval> x){return 0;}));
-                    argpostype.push_back({-3,static_cast<double>(size(funclist))});
+                    argpostype.push_back({-3,static_cast<double>(size(funclist)-1)});
                     i+=size(s);
                     s.erase();
 
@@ -126,7 +126,6 @@ vector<vector<double>> functionparse(string input){
                 for(int funcnum = 0; funcnum <size(funclist);funcnum++){
                     if(string(s.end()-size(funclist[funcnum].name),s.end())==funclist[funcnum].name){
                         i+=size(funclist[funcnum].name);
-                        
                         s.erase(size(s)-size(funclist[funcnum].name),size(s));
                         funcinsert = {-1,static_cast<double>(funcnum)};
                         break;
@@ -185,7 +184,7 @@ vector<vector<double>> functionparse(string input){
     }
     return argpostype;
 }
-/*
+/* test cases
 
 int main(){
     string funcin = "89.5+e-(cos(2)+7e)*((8)(2-6))";
