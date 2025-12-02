@@ -6,6 +6,7 @@
 #include "funcvarlist.h"
 #include "functionparse.h"
 #include "funcconstructors.h"
+#pragma once
 class evalresult{
     public:
     int resulttype;
@@ -60,6 +61,7 @@ Evaluation:
 */  
 
 evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, int funcvarstartin = -2){
+    errcorrection = false;
     vector<evalresult> calargs = {}; //stores subterms of values; for eval, each individual term will be added together at end unless resulttype = 0
     int funcvarstart = funcvarstartin; //vector of which variables are function variables in varlist; erase all at end
 
@@ -87,9 +89,13 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
         errval value = 0;
         for(int i = 0; i<size(arglist); i++){
             
-            if(arglist[i][0] == -15695){ //determine if error included: if so, evaluate before ± then vectorsum errors
+            if(arglist[i][0] == -15695){ //determine if error included: if so, evaluate before ± then vectorsum errors - i is location of ±
                 value = functioneval(vector<vector<double>>(arglist.begin()+2,arglist.begin()+i)).erval;
-                value.err = vectorsum({value.err,arglist[size(arglist)-1][1]});
+                if(arglist[i+2][0] == '%'){
+                    arglist[i+1][1]*=0.01;
+                    arglist[i+1][1]*=value.val;
+                }
+                value.err = vectorsum({value.err,arglist[i+1][1]});
                 found = true;
                 break;
             }
@@ -142,12 +148,12 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
                 errval val(arglist[i][1]);
                 calargs.push_back(evalresult(createdfunc("constant",funcargnum,[val](vector<errval> a){return val;})));
             } else {
-            calargs.push_back(evalresult(errval(arglist[i][1])));
+                calargs.push_back(evalresult(errval(arglist[i][1])));
             }
             arglist[i] = {-9, static_cast<double>(size(calargs)-1)};
 
         } else if(arglist[i][0]==-2){ //variable replacement --> variable value as errval
-            if(arglist[i][1]< funcvarstart){ //test to see if function variable: if not, eval as normal
+            if(arglist[i][1]< funcvarstart || funcvarstart < 0){ //test to see if function variable: if not, eval as normal
                 if(funcdef){
                     errval val = varlist[arglist[i][1]].value;
                     calargs.push_back(evalresult(createdfunc("constant",funcargnum,[val](vector<errval> a){return val;})));
@@ -281,8 +287,9 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
         if(funcvarstartin==-2){
             sumfunc.name = funclist[size(funclist)-1].name;
             funclist[size(funclist)-1]=sumfunc;
+            varlist.erase(varlist.begin()+funcargnum,varlist.end()); //erase function variables from arglist to free up variable names
         }
-        varlist.erase(varlist.begin()+funcargnum,varlist.end()); //erase function variables from arglist to free up variable names
+        
         return evalresult(sumfunc);
     } else{
         return evalresult(sum);
@@ -292,7 +299,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
 return(evalresult(errval(560))); //error code if no return value for some reason
 }
 //test code
-int main(){
+/*int main(){
     functioneval(functionparse("a = 2+-1"));
     auto c = functionparse("f(x,y,z)=sqrt(xy)+acos(x+2)-2xz");
     functioneval(c);
@@ -300,3 +307,4 @@ int main(){
     cout<<d.erval;
     return 0;
 }
+    */
