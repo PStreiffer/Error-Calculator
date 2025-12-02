@@ -4,6 +4,7 @@
 #include <string>
 #include "funcvarlist.h"
 #include <algorithm>
+#pragma once
 using namespace std;
 
 
@@ -16,7 +17,7 @@ vector<vector<double>> functionparse(string input){
             break;
         }
     }
-    vector<char> arglist = {'*','+','/','^', '(', ')','=',','};
+    vector<char> arglist = {'*','+','/','^', '(', ')','=',',','%'};
 
     vector<vector<double>> argpostype = {};
     signed int equalnum = -1;
@@ -31,7 +32,9 @@ vector<vector<double>> functionparse(string input){
                 break;
             }
             if(input[i]=='-'){ //convert - signs into inversions
+                if(argpostype[size(argpostype)-1][0] < 0){
                 argpostype.push_back({'+'});
+                }
                 argpostype.push_back({-1,static_cast<double>(inversepos)});
                 if(input[i+1]!='('){
                     argpostype.push_back({'(',2,2});
@@ -45,20 +48,6 @@ vector<vector<double>> functionparse(string input){
             
         }
         if(input[i] == ')'){ //paren matching
-                    try{
-                    for(int i2 = size(argpostype)-2;i2>=0;i2--){
-                        if(argpostype[i2][0] == '(' && size(argpostype[i2])==1){
-                            argpostype[i2].push_back(size(argpostype)-1-i2);
-                            break;
-                        }
-                        if(i2 == 0){
-                            throw(i);
-                        }
-                    }
-                    } catch (int x){ //closed paren verification - make sure enough open paren for closed
-                        cout<<"Invalid closed parentheses\n";
-                        return {{560}};
-                    }
                     if(input[i+1]=='('){
                         argpostype.push_back({'*'});
                     }
@@ -89,16 +78,25 @@ vector<vector<double>> functionparse(string input){
             for(int n = i+1;isalpha(input[n])&& input[n]!='E';n++){
                 s+=static_cast<char>(input[n]);
             }
+            if(s == "precision"){
+                i+=s.size()-1;
+                continue;
+            }
             if (equalnum == -1){
             equalnum = input.find("=");
             }
             //function/var creation handling
-            if(static_cast<signed int>(i+size(s)) <= equalnum){   
+            if(static_cast<signed int>(i+size(s)) <= equalnum){    //if there is an equal sign
                 int argnum = 0;        
                 if(input[i+size(s)]=='('){ //function creation
                     if(size(argpostype)>0){
                     cout<<"Does not support explicit functions\n";
                     return {{560}};
+                    }
+                    for(int funcnum; funcnum<size(funclist);funcnum++){
+                        if(funclist[funcnum].name==s){
+                            funclist.erase(funclist.begin()+funcnum);
+                        }
                     }
                     funclist.push_back(createdfunc(s,1,[](vector<errval> x){return 0;}));
                     argpostype.push_back({-3,static_cast<double>(size(funclist)-1)});
@@ -106,6 +104,12 @@ vector<vector<double>> functionparse(string input){
                     s.erase();
 
                 } else if (input[i+1]==',' || input[i+1]==')'){ //function variable creation
+                    for(int varnum; varnum<size(varlist);varnum++){ //test if variable already exists
+                        if (varlist[varnum].name == s[0]){
+                            cout<<"Function variables may not share names with defined variables";
+                            return {{560}};
+                        }
+                    }
                     if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
                     varlist.push_back(createdvar(s[0],errval(0)));
                     argpostype.push_back({-4,static_cast<double>(size(varlist)-1)});
@@ -114,6 +118,11 @@ vector<vector<double>> functionparse(string input){
                     argnum++;
                 } else { //new variable creation
                     if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
+                    for(int varnum = 0; varnum<size(varlist);varnum++){ //test if redefining: if so, remove old def
+                        if (varlist[varnum].name == s[0]){
+                            varlist.erase(varlist.begin()+varnum);
+                        }
+                    }
                     varlist.push_back(createdvar(s[0],errval(0)));
                     argpostype.push_back({-5,static_cast<double>(size(varlist)-1)});
                     i+=size(s);
@@ -121,7 +130,7 @@ vector<vector<double>> functionparse(string input){
                 }
                 funclist[size(funclist)-1].argnum=argnum;
                 i+=size(s)-1;
-            }  else{ 
+            }  else{ //no equal sign
                 if(input[i+size(s)]=='('){ //function detection + removal - always a ( afterwards
                 for(int funcnum = 0; funcnum <size(funclist);funcnum++){
                     if(string(s.end()-size(funclist[funcnum].name),s.end())==funclist[funcnum].name){
@@ -158,7 +167,7 @@ vector<vector<double>> functionparse(string input){
                 if (funcinsert[0] != 0){ //add function into arglist
                     if(size(argpostype)>0){
                     if(argpostype[size(argpostype)-1][0]==')'||argpostype[size(argpostype)-1][0]<=0){//add implicit multiplication
-                                argpostype.push_back({'*'});
+                        argpostype.push_back({'*'});
                     }
                     }  
                     argpostype.push_back(funcinsert);
@@ -169,18 +178,39 @@ vector<vector<double>> functionparse(string input){
         
         }
     }
-    for(int argnum = 0; argnum<size(argpostype);argnum++){ //open paren verification - make sure every open paren has a closed one
-        if(argpostype[argnum][0]=='('){
-            if(size(argpostype[argnum])==3){ //insert floating closed paren from inversion addition earlier
-                argpostype.insert(argpostype.begin()+argnum+argpostype[argnum][2],{')'});
-                argpostype[argnum] = {'(',argpostype[argnum][1]};
-            }
-            if(size(argpostype[argnum])==1){ //invalid open paren detection
+    for(int argnum = 0; argnum<size(argpostype);argnum++){
+        if(argpostype[argnum][0]=='(' && size(argpostype[argnum])==3){ //insert floating closed paren from inversion addition earlier
+            argpostype.insert(argpostype.begin()+argnum+argpostype[argnum][2],{')'});
+            argpostype[argnum] = {'(',argpostype[argnum][1]};
+        }
+    }
+    for(int argnum = 0; argnum<size(argpostype);argnum++){ //closed paren addition
+        if(argpostype[argnum][0]==')'){
+            try{
+                    for(int i2 = size(argpostype)-2;i2>=0;i2--){
+                        if(argpostype[i2][0] == '('){
+                            if(size(argpostype[i2])==1){
+                                argpostype[i2].push_back(argnum-i2);
+                                break;
+                            } else if(argnum-i2 == argpostype[i2][1]){
+                                break;
+                            }
+                        }
+                        if(i2 == 0){
+                            throw(argnum);
+                        }
+                    }
+                    } catch (int x){ //closed paren verification - make sure enough open paren for closed
+                        cout<<"Invalid closed parentheses\n";
+                        return {{560}};
+                    }
+        }
+    }
+    for(int argnum = 0; argnum<size(argpostype);argnum++){//open paren verification - make sure every open paren has a closed one
+        if(argpostype[argnum][0] == '('&&size(argpostype[argnum])==1){ //invalid open paren detection
             cout<<"Invalid open parentheses\n";
             return {{560}};
         }
-    }
-
     }
     return argpostype;
 }
