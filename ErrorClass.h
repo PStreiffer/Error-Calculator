@@ -56,6 +56,31 @@ class errval{
             *this = *this / rhs;
             return *this;
         }
+
+        bool operator> (errval rhs){
+            return val > rhs.val;
+        };
+        bool operator> (double rhs){
+            return val > rhs;
+        };
+        bool operator< (errval rhs){
+            return val < rhs.val;
+        };
+        bool operator< (double rhs){
+            return val < rhs;
+        };
+        bool operator!=(errval rhs){
+            return (val != rhs.val && err != rhs.err);
+        }
+        bool operator!=(double rhs){
+            return (val != rhs);
+        }
+        bool operator==(errval rhs){
+            return (val == rhs.val && err == rhs.err);;
+        }
+        bool operator==(double rhs){
+            return (val == rhs && err == 0);
+        }
         friend std::ostream& operator<<(std::ostream& stream, const errval& errval){ //output stream
             stream << errval.val << " \u00b1 " << errval.err;
             return stream;
@@ -92,6 +117,7 @@ errval errval::operator/(errval rhs){ //actual definition of divison
     
     return errval(val / rhs.val,err1);
 }
+
 errval sqrt(errval x){
     return errval(sqrt(x.val), funcerr([](vector<double> a){return sqrt(a[0]);}, {x}));
 }
