@@ -1,5 +1,6 @@
 #include "ErrorClass.h"
 #include "funcvarlist.h"
+#pragma once
 
 createdfunc addition("addition",2,[](vector<errval>a){return a[0]+a[1];});
 createdfunc multiplication("multiplication",2,[](vector<errval>a){return a[0]*a[1];});
