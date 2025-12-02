@@ -82,7 +82,7 @@ class errval{
             return (val == rhs && err == 0);
         }
         friend std::ostream& operator<<(std::ostream& stream, const errval& errval){ //output stream
-            stream << errval.val << " \u00b1 " << errval.err;
+            stream << errval.val << " +- " << errval.err;
             return stream;
         }
 };
