@@ -8,7 +8,7 @@ This calculator supports three basic functions, which include many different ope
 
 2. Variable definition: typing the name of a single-letter (upper- or lower- case) variable will define it and allow it to be used in further calculations. This value may be changed by simply redefining the variable. If the calculation involves evaluation, the calculator will perform this automatically. If this evaluation yields error, the error of the variable will be the vector sum of the input error and the calculated error.
 
-3. Function Definition: typing the name of a function will define it and store it for further use. This function may be any number of arguments and supports error, so calculations made using it will automatically propogate the error.
+3. Function Definition: typing the name of a function will define it and store it for further use. This function may be any number of arguments and supports error, so calculations made using it will automatically propagate the error.
 
 Syntax
 
@@ -17,8 +17,8 @@ Syntax
 - functions with longer names take priority over shorter ones. For instance, 'arccos' will be recognized before 'cos'.
 - all functions must be followed by a valid set of parentheses to contain its arguments.
 - implicit functions and implicit variable definitions are not supported.
-- some functions are predefined. A full list of these may be found in varlist.h, along with a list of predefined variables. These may be altered and will automatically be recognized, should you choose to add more default functions/variables or remove those already there. WARNING: some operations may not be supported, such as csc, sec, and cot, along with hyperbolic functions. A list of all functions currently supported may be found further down in this document.
-- variables defined first take precedent.
+- some functions are predefined. A full list of these may be found in varlist.h, along with a list of predefined variables. These may be altered and will automatically be recognized, should you choose to add more default functions/variables or remove those already there. WARNING: some operations are not supported, such as csc, sec, and cot, and the hyperbolic functions. A list of all functions currently supported may be found further below.
+- variables defined first take precedent, but variables with the same name will be replaced with the one most recently created.
 - separate arguments in functions by commas.
 
 Erratta
@@ -26,7 +26,8 @@ Erratta
 - This calculator uses the derivative method of error propagation, calculating the error of a function based on a specific variable as the partial derivative with respect to that variable, evaluated at a point, times the error of the variable at that point. The total error of a function is equal to the vector sum of all of the individual errors with respect to each variable.
 - To modify the source code, download the full file and modify as necessary. The compilation was done on main.cpp, and can be recompiled (perhaps using new default funcs) from there.
 - The ± sign does not display properly in the windows terminal, but that shouldn't impact the calculator: keep an eye out for ┬▒ for ±.
-- The full list of functions that are currently supported by default are:
+  
+The full list of functions that are currently supported by default are:
     - sqrt
     - cos
     - sin
@@ -36,8 +37,8 @@ Erratta
     - arctan
     - ln
     - log
-    - arbitrary log base
-    - powers, eg. e^x
+    - arbitrary log base, loga
+    - exponentiation
     - multiplication
     - division
     - addition
@@ -45,4 +46,4 @@ Erratta
 More may come soon.
 
 
-developed by Phoebe Violette Streiffer, 2025. please attribute credit in modifications, as well as in using (such as in lab reports).
+developed by Phoebe Violette Streiffer, 2025. please attribute credit in modifications, as well as when using (such as in lab reports).
