@@ -20,7 +20,7 @@ Syntax
 - separate arguments in functions by commas.
 
 Erratta
-- This calculator may be wrong for particularly large errors or for particular scenarios due to C++'s limitations in rounding and doubles. This should not be very noticeable for small error or small variables (which are the main focus of this calculator anyway), but bewarned that they may not always be accurate.
+- This calculator may be innaccurate for certain particularly large errors due to C++'s limitations in rounding and doubles. This should not be very noticeable for small error or small variables (which are the main focus of this calculator anyway), but bewarned that they may not always be accurate. This should not generally affect value calculations, however.
 - This calcualtor uses the derivative method of error propagation, calculating the error of a function based on a specific variable as the partial derivative with respect to that variable, evaluated at a point, times the error of the variable at that point. The total error of a function is equal to the vector sum of all of the individual errors with respect to each variable.
 - The full list of functions that are currently supported by default are:
     - sqrt
@@ -41,4 +41,4 @@ Erratta
 More may come soon.
 
 
-This calculator was developed by Phoebe Violette Streiffer, 2025.
+developed by Phoebe Violette Streiffer, 2025.
