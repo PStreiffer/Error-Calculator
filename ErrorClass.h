@@ -5,7 +5,7 @@
 #include <cmath>
 #pragma once
 using namespace std;
-
+bool errcorrection = false;
 class errval{
     public:
         double val; //value used for calculations
@@ -96,7 +96,25 @@ double funcerr(double (*f)(vector<double>), vector<errval> values){ //function f
     //calculate individual errors of function based on function & values + error
     vector<double> subterms = {};
     for(int i=0; i<size(vals);i++){
-        subterms.push_back(partial(f,vals,i)*values[i].err); //add each partial to subterms
+        double val = 0;
+        try{
+            val = partial(f,vals,i)*values[i].err;
+            if(5*abs(val)>abs(val)||val ==0){
+            } else{
+                val = 0;
+                if(!errcorrection){
+                    cout<<"Warning: error adjusted as error is undefined due to range, dividing by 0, etc; setting term equal to 0"<<"\n";
+                    errcorrection = true;
+                }
+            }
+        } catch (...){
+            val = 0;
+            if(!errcorrection){
+                cout<<"Warning: error adjusted as error is undefined due to range, dividing by 0, etc; setting term equal to 0"<<"\n";
+                errcorrection = true;
+            }
+        }
+        subterms.push_back(val); //add each partial to subterms
     }
     return vectorsum(subterms); //calculate vectorsum
 }
