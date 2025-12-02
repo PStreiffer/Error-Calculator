@@ -56,8 +56,8 @@ vector<vector<double>> functionparse(string input){
             string s = "";
             s+=input[i];
             int n = i+1;
-            while(isdigit(input[n]) || input[n]=='.' ||input[n]=='E'){
-                if(input[n]=='E'&& isdigit(input[n+1]) == false){
+            while(isdigit(input[n]) || input[n]=='.' ||input[n]=='E'||(input[n-1]=='E'&&input[n]=='-')){
+                if(input[n]=='E'&& (isdigit(input[n+1]) && false||input[n+1]!='-')){
                     cout << "Invalid scientific notation";
                     return {{560}};
                 }
