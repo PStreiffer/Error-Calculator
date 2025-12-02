@@ -11,10 +11,15 @@ class createdfunc {
     string name;
     int argnum;
     function<errval(vector<errval>)> namedfunc;
-    createdfunc(string namein = " ", int argnumin = 1, function<errval(vector<errval>)> functionin = [](vector<errval> x){return 0;}){
+    createdfunc(string namein, int argnumin, function<errval(vector<errval>)> functionin){
         name = namein;
         argnum = argnumin;
         namedfunc = functionin;
+    }
+    createdfunc(string namein = "",int argnumin = 0, function<errval()> functionin = [](){return 0;}){
+        name = namein;
+        argnum = argnumin;
+        namedfunc = [functionin](vector<errval> a){return functionin();};
     }
     errval operator()(vector<errval> input) {
         return namedfunc(input);
