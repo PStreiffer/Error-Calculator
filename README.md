@@ -1,5 +1,7 @@
 This is a calculator designed to make calculations with error. This process turns out to be quite simple to do, but takes a very long time to perform by hand especially for complicated calculations involving multiple variables, many terms with error, and complex functions. The calculator simplifies this into simple entry, like a normal calculator.
 
+To use this calculator, simply download ErrorCalculator.exe and run it. It will open a terminal window, where you may enter functions.
+
 This calculator supports three basic functions, which include many different operations.
 
 1. Basic Evaluation: typing an expression using the correct syntax, the calculator will automatically evaluate it and give a decimal answer. If any variables with error are included, the error will be shown as well.
@@ -21,7 +23,8 @@ Syntax
 
 Erratta
 - This calculator may be innaccurate for certain particularly large errors due to C++'s limitations in rounding and doubles. This should not be very noticeable for small error or small variables (which are the main focus of this calculator anyway), but bewarned that they may not always be accurate. This should not generally affect value calculations, however.
-- This calcualtor uses the derivative method of error propagation, calculating the error of a function based on a specific variable as the partial derivative with respect to that variable, evaluated at a point, times the error of the variable at that point. The total error of a function is equal to the vector sum of all of the individual errors with respect to each variable.
+- This calculator uses the derivative method of error propagation, calculating the error of a function based on a specific variable as the partial derivative with respect to that variable, evaluated at a point, times the error of the variable at that point. The total error of a function is equal to the vector sum of all of the individual errors with respect to each variable.
+- To modify the source code, download the full file and modify as necessary. The compilation was done on main.cpp, and can be recompiled (perhaps using new default funcs) from there.
 - The full list of functions that are currently supported by default are:
     - sqrt
     - cos
@@ -41,4 +44,4 @@ Erratta
 More may come soon.
 
 
-developed by Phoebe Violette Streiffer, 2025.
+developed by Phoebe Violette Streiffer, 2025. please attribute credit in modifications, as well as in using (such as in lab reports).
