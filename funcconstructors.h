@@ -6,9 +6,9 @@ createdfunc multiplication("multiplication",2,[](vector<errval>a){return a[0]*a[
 createdfunc division("division",2,[](vector<errval>a){return a[0]/a[1];});
 createdfunc power("power",2,[](vector<errval>a){return pow(a[0],a[1]);});
 
-createdfunc concat(const createdfunc upperfunc, const vector<createdfunc> argfuncs) {
-    //take a parent function and functions are arguments and composes upperfunc of argfuncs
-    //returns concat of upperfunc as createdfunc w/ correct argnum
+createdfunc compose(const createdfunc upperfunc, const vector<createdfunc> argfuncs) {
+    //take a parent function and functions as arguments and composes upperfunc of argfuncs
+    //returns composition of upperfunc as createdfunc w/ argnum equal to sum of argnums of composites
     vector<vector<int>> argindex = {};
     for(createdfunc arg: argfuncs){
         if(size(argindex)==0){
@@ -22,7 +22,7 @@ createdfunc concat(const createdfunc upperfunc, const vector<createdfunc> argfun
         argindex[size(argindex)-1][1]+1, //size
         [upperfunc, argindex, argfuncs](const vector<errval> a){
         vector<errval> argsols = {};
-        for(int i = 0; i<size(argindex);i++){
+        for(int i = 0; i<size(argindex);i++){ //create vector of arguments for upperfunc
             argsols.push_back(argfuncs[i].namedfunc(vector<errval>(a.begin()+argindex[i][0],a.begin()+argindex[i][1]+1)));
         }
         return upperfunc.namedfunc(argsols);
@@ -30,28 +30,22 @@ createdfunc concat(const createdfunc upperfunc, const vector<createdfunc> argfun
     );
 };
 
-void assigner(createdfunc func, vector<errval> constants, vector<int> assigntype){
-    /*assigntype dictates what each variable is:
-        - <0 - constant: does not take in value, constant number equal to number in assigntype plus one
-        - >=0 - variable: takes in value, variable number equal to number in assigntype
-        if assigntype > 0, constant in that slot is not used
-    */
+createdfunc assigner(createdfunc func, vector<int> assigntype){
+    //takes in function and list of assignments and outputs function where each argument is mapped to arg in assigntype
+    //acts as translation: args of new function --> args of original function
+    //argnum is maximum argnum reached by assigntype
     int totalargs = 0;
-    for (int type: assigntype){
-        if (type>totalargs){
+    for (int type: assigntype){ //determine maximum argnum --> new argnum
             totalargs = type;
-        }
     }
-    func = createdfunc(
+    return createdfunc(
         func.name, //name
         totalargs+1, //argnum
-        [constants,assigntype,func](vector<errval> a){
+        [assigntype,func](vector<errval> a){
             vector<errval> input = {};
-            for (int type: assigntype){
+            for (int type: assigntype){ //assign values in a to inputs
                 if(type>=0){
                     input.push_back(a[type]);
-                } else {
-                    input.push_back(constants[-type-1]);
                 }
             }
             return func.namedfunc(input);

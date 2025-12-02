@@ -125,7 +125,6 @@ errval sqrt(errval x){
 errval pow(errval x, errval y){
     return errval(pow(x.val,y.val), funcerr([](vector<double> a){return pow(a[0],a[1]);}, {x,y}));
 }
-// k = sqrt(partialfx*errorx + partialfy*errory)
 
 errval sin(errval x){
     return errval(sin(x.val), funcerr([](vector<double> a){return sin(a[0]);}, {x}));

@@ -40,12 +40,16 @@ class evalresult{
     }
 };
 
-evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, int funcvarstartin = -2){
-    vector<evalresult> calargs = {}; //stores subterms of values; for eval, each individual term will be added together at end unless resulttype = 0
 /* Workflow:
 - determine if function/var defition, or if evaluation
-Function/var:
-TBD - already separated out tho
+Var:
+1. Determine if there is a pm: if so, then one side is a function to be evaluated, the other is an error; if not, only an eval
+2. Evaluate the function and set it equal to the value + add the error if there is any
+3. Evaluate the error by taking vector sum of function error and user defined error
+4. Add variable to varlist
+
+Function: same as Evaluation, but instead of numbers, composes functions
+
 Evaluation:
 1. Evaluate Parentheses, put values into calargs & set arglist position to pointer to calargs - use recursion
 2. Evaluate numbers, functions, and variables, put into calargs & set arglist position to pointer to calargs
@@ -54,11 +58,15 @@ Evaluation:
     - evaluate left to right
 4. evaluate +: keep accumulator, return final value
 */  
-    int funcvarstart = funcvarstartin;
-    if (arglist[0][0] == -3){
+
+evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, int funcvarstartin = -2){
+    vector<evalresult> calargs = {}; //stores subterms of values; for eval, each individual term will be added together at end unless resulttype = 0
+    int funcvarstart = funcvarstartin; //vector of which variables are function variables in varlist; erase all at end
+
+    if (arglist[0][0] == -3){ 
+        //special handling for new functions - defines setup to move into evaluation
         funcdef = true;
-        funcvarstart = funcvarstartin; //vector of which variables are function variables in varlist; erase all at end
-        if(funcvarstart==-2){
+        if(funcvarstart==-2){ //determine where function variables begin
         for(int i = 2;arglist[i][0]!=')';i++){
             if(arglist[i][0]==-4){
             funcvarstart = arglist[i][1];
@@ -66,18 +74,12 @@ Evaluation:
             }
         }
         }
-        for(int i = 0; i<size(arglist);i++){
+        for(int i = 0; i<size(arglist);i++){ //remove function definition junk from beginning: start argument eval from after = sign
             if(arglist[i][0]=='='){
                 arglist.erase(arglist.begin(),arglist.begin()+i+1);
                 break;
             }
         }
-        //special handling for new functions
-        /*Workflow:
-            1. separate by addition - create vector of vector of vector of doubles for each addition
-            2. determine if there is a function variable in subvector - if no, evaluate as normal
-            3. if there is a function variable, construct a function from bottom up
-        */
 
             } if(arglist[0][0]==-5){
         //special handling for new variables - evaluate expression then add error
@@ -101,57 +103,79 @@ Evaluation:
             
         
     } else { //evaluation
-    int funcargnum = size(varlist)-funcvarstart;
-     vector<int> upperassignlist(funcargnum);
-        if(funcdef){
-            iota(upperassignlist.begin(),upperassignlist.end(),0);
-        }
-    for(int i = 0;i<size(arglist);i++){ //parentheses
+    int funcargnum = size(varlist)-funcvarstart; //number of function variables
+    vector<int> upperassignlist(funcargnum); //list of variables assigned in numeric order, to use for assignment later
+    if(funcdef){ //add numeric ordered variables
+        iota(upperassignlist.begin(),upperassignlist.end(),0);
+    }
+    for(int i = 0;i<size(arglist);i++){ //parentheses eval
         if (arglist[i][0] == '('){ //paren recursion - if paren detected, input enclosed arguments into functioneval
-            vector<vector<double>>tempargs (arglist.begin()+i+1,arglist.begin()+i+arglist[i][1]);
-            vector<int> commanum = {};
+            vector<vector<double>>tempargs (arglist.begin()+i+1,arglist.begin()+i+arglist[i][1]); 
+            vector<int> commanum = {}; //indices of commas in paren
             for(int arg = 0; arg<size(tempargs);arg++){ //check how many args
                 if(tempargs[arg][0] == ','){
                     commanum.push_back(arg);
-                    break;
                 }
             }
             if(size(commanum)>0){ //if multiple args, evaluate as list
                 commanum.push_back(size(tempargs));
-                calargs.push_back(evalresult({functioneval(vector<vector<double>>(tempargs.begin(),tempargs.begin()+commanum[0]),funcdef,funcvarstart)}));
-                for(int n = 1; n<size(commanum);n++){
-                    calargs[size(calargs)-1].errvalist.push_back(functioneval(vector<vector<double>>(tempargs.begin()+commanum[n-1]+1,tempargs.begin()+commanum[n]),funcdef,funcvarstart).erval);
+                calargs.push_back(evalresult({functioneval(vector<vector<double>>(tempargs.begin(),tempargs.begin()+commanum[0]),funcdef,funcvarstart)})); //recursive element: evaluates subfunction then adds it to list
+                for(int n = 1; n<size(commanum);n++){ //add onto error value list
+                    if(funcdef){ //add on extra elements for function def
+                        calargs[size(calargs)-1].funvalist.push_back(functioneval(vector<vector<double>>(tempargs.begin()+commanum[n-1]+1,tempargs.begin()+commanum[n]),funcdef,funcvarstart).funval);
+                    } else{ //add on extra elements for regular eval
+                        calargs[size(calargs)-1].errvalist.push_back(functioneval(vector<vector<double>>(tempargs.begin()+commanum[n-1]+1,tempargs.begin()+commanum[n]),funcdef,funcvarstart).erval);
+                    }
                 }
             } else { //evaluate just one arg
                 calargs.push_back(functioneval(tempargs,funcdef,funcvarstart));
             }
             arglist.erase(arglist.begin()+i+1,arglist.begin()+i+1+arglist[i][1]);
-            arglist[i] = {-9,static_cast<double>(size(calargs)-1)};
+            arglist[i] = {-9,static_cast<double>(size(calargs)-1)}; //-9 used to inicate value has been evaluated, and is in calargs
         }
     }
 
 
     for(int i = 0; i<size(arglist);i++){ //number replacement, variable replacement, function eval
         if (arglist[i][0] == 0){ //number replacement --> errval
+            if(funcdef){
+                errval val(arglist[i][1]);
+                calargs.push_back(evalresult(createdfunc("constant",funcargnum,[val](vector<errval> a){return val;})));
+            } else {
             calargs.push_back(evalresult(errval(arglist[i][1])));
+            }
             arglist[i] = {-9, static_cast<double>(size(calargs)-1)};
 
         } else if(arglist[i][0]==-2){ //variable replacement --> variable value as errval
-            if(arglist[i][1]< funcvarstart){
-                calargs.push_back(evalresult(varlist[arglist[i][1]].value));
+            if(arglist[i][1]< funcvarstart){ //test to see if function variable: if not, eval as normal
+                if(funcdef){
+                    errval val = varlist[arglist[i][1]].value;
+                    calargs.push_back(evalresult(createdfunc("constant",funcargnum,[val](vector<errval> a){return val;})));
+                } else{
+                    calargs.push_back(evalresult(varlist[arglist[i][1]].value));
+                }
                 arglist[i] = {-9,static_cast<double>(size(calargs)-1)};
-            } else {
-                calargs.push_back(evalresult(createdfunc("funcvar",funcargnum,
-                [arglist,i](vector<errval> a ){return a[arglist[i][1]];})));
+            } else { //if is, add as function instead, returning same value out as appropriate index 
+                const int arg = arglist[i][1]-funcvarstart;
+                calargs.push_back(evalresult(createdfunc(
+                    "funcvar",
+                    funcargnum,
+                    [arg](vector<errval> a){return a[arg];})));
+
                 arglist[i] = {-9, static_cast<double>(size(calargs)-1)};
-                assigner(calargs[size(calargs)-1].funval,{},upperassignlist);
             }
         } else if(arglist[i][0] == -1){ //functions - already have a -9 as input since paren right after
-            if(calargs[arglist[i+1][1]].resulttype=='e'||calargs[arglist[i+1][1]].resulttype=='E'){
+            if(calargs[arglist[i+1][1]].resulttype=='e'||calargs[arglist[i+1][1]].resulttype=='E'){ //general use case determinant if errval or func
                 calargs[arglist[i+1][1]]=evalresult(funclist[arglist[i][1]](calargs[arglist[i+1][1]].errvalist));
             } else {
-                calargs[arglist[i+1][1]]=evalresult(concat(funclist[arglist[i][1]],calargs[arglist[i+1][1]].funvalist));
-                assigner(calargs[arglist[i+1][1]].funval,{},upperassignlist);
+                calargs[arglist[i+1][1]]=evalresult(compose(funclist[arglist[i][1]],calargs[arglist[i+1][1]].funvalist));
+                vector<int> assignlist = {}; //create assignment list; make same size as number of args to assign
+                for(createdfunc a: calargs[arglist[i+1][1]].funvalist){
+                    for (int arg: upperassignlist){
+                        assignlist.push_back(arg);
+                    }
+                }
+                calargs[arglist[i+1][1]].funval = assigner(calargs[arglist[i+1][1]].funval,assignlist); //assign args appropriately
             }
             arglist.erase(arglist.begin()+i);
         }
@@ -164,9 +188,13 @@ Evaluation:
                 
                 calargs[arglist[i-1][1]].erval = pow(calargs[arglist[i-1][1]].erval,calargs[arglist[i+1][1]].erval);
             } else {
-                calargs[arglist[i-1][1]].funval = concat(power, {calargs[arglist[i-1][1]].funval,calargs[arglist[i+1][1]].funval});
+                calargs[arglist[i-1][1]].funval = compose(power, {calargs[arglist[i-1][1]].funval,calargs[arglist[i+1][1]].funval});
                 calargs[arglist[i-1][1]].resulttype = 'f';
-                assigner(calargs[arglist[i-1][1]].funval,{},upperassignlist);
+                vector<int> assignlist = upperassignlist;
+                for (int arg: upperassignlist){
+                    assignlist.push_back(arg);
+                }
+                calargs[arglist[i-1][1]].funval = assigner(calargs[arglist[i-1][1]].funval,assignlist);
                 
             }
             calargs[arglist[i+1][1]].resulttype = 0;
@@ -181,9 +209,13 @@ Evaluation:
             if((calargs[arglist[i+1][1]].resulttype=='e'||calargs[arglist[i+1][1]].resulttype=='E')&&(calargs[arglist[i-1][1]].resulttype=='e'||calargs[arglist[i-1][1]].resulttype=='E')){
                 calargs[arglist[i-1][1]].erval*=calargs[arglist[i+1][1]].erval;
             } else {
-                calargs[arglist[i-1][1]].funval = concat(multiplication, {calargs[arglist[i-1][1]].funval,calargs[arglist[i+1][1]].funval});
+                calargs[arglist[i-1][1]].funval = compose(multiplication, {calargs[arglist[i-1][1]].funval,calargs[arglist[i+1][1]].funval});
                 calargs[arglist[i-1][1]].resulttype = 'f';
-                assigner(calargs[arglist[i-1][1]].funval,{},upperassignlist);
+                vector<int> assignlist = upperassignlist;
+                for (int arg: upperassignlist){
+                    assignlist.push_back(arg);
+                }
+                calargs[arglist[i-1][1]].funval = assigner(calargs[arglist[i-1][1]].funval,assignlist);
             }
             calargs[arglist[i+1][1]].resulttype=0;
             arglist.erase(arglist.begin()+i,arglist.begin()+i+2);
@@ -194,9 +226,13 @@ Evaluation:
             if((calargs[arglist[i+1][1]].resulttype=='e'||calargs[arglist[i+1][1]].resulttype=='E')&&(calargs[arglist[i-1][1]].resulttype=='e'||calargs[arglist[i-1][1]].resulttype=='E')){
                 calargs[arglist[i-1][1]].erval/=calargs[arglist[i+1][1]].erval;
             } else {
-                calargs[arglist[i-1][1]].funval = concat(division, {calargs[arglist[i-1][1]].funval,calargs[arglist[i+1][1]].funval});
+                calargs[arglist[i-1][1]].funval = compose(division, {calargs[arglist[i-1][1]].funval,calargs[arglist[i+1][1]].funval});
                 calargs[arglist[i-1][1]].resulttype = 'f';
-                assigner(calargs[arglist[i-1][1]].funval,{},upperassignlist);
+                vector<int> assignlist = upperassignlist;
+                for (int arg: upperassignlist){
+                    assignlist.push_back(arg);
+                }
+                calargs[arglist[i-1][1]].funval = assigner(calargs[arglist[i-1][1]].funval,assignlist);
             }
             calargs[arglist[i+1][1]].resulttype=0;
             arglist.erase(arglist.begin()+i,arglist.begin()+i+2);
@@ -207,10 +243,7 @@ Evaluation:
     errval sum = errval(0); //accumulator
     createdfunc sumfunc; //function accumulator
     sumfunc.argnum = size(varlist)-funcvarstart;
-    vector<int> assignlist(sumfunc.argnum);
-    iota(assignlist.begin(),assignlist.end(),0);
     for(int i = 0; i<size(arglist);i++){ //addition
-        assignlist = vector<int>(assignlist.begin(),assignlist.begin()+sumfunc.argnum);
         if(arglist[i][0]==-9){
             if(calargs[arglist[i][1]].resulttype!=0){ //check to see if already incorporated
                 if(calargs[arglist[i][1]].resulttype == 'e'|| calargs[arglist[i][1]].resulttype == 'E'){ //accumulate regular vals
@@ -219,42 +252,51 @@ Evaluation:
                     if(sumfunc.name == ""){ //assign sumfunc if not assigned
                         sumfunc.namedfunc = calargs[arglist[i][1]].funval.namedfunc;
                         sumfunc.name = calargs[arglist[i][1]].funval.name;
-                    } else { //concat sumfunc with next function, assign variables to next function - this is never a constant, since would be added to sum instead
-                        sumfunc = concat(addition, {sumfunc, calargs[arglist[i][1]].funval});
-                        for(int i = 0; i<calargs[arglist[i][1]].funval.argnum;i++){
-                            assignlist.push_back(i);
+                    } else { //compose sumfunc with next function, assign variables to next function - this is never a constant, since would be added to sum instead
+                        sumfunc = compose(addition, {sumfunc, calargs[arglist[i][1]].funval});
+                        vector<int> assignlist = upperassignlist;
+                        for (int arg: upperassignlist){
+                            assignlist.push_back(arg);
                         }
-                        assigner(sumfunc,{},assignlist);
+                        sumfunc = assigner(sumfunc,assignlist);
                     }
                 }
             }
         }
     }
-    if(sum!=0 && funcdef){ //add constants to funcdef at end by adding sum as constant, no need to assign constant function
+    if(sum!=0 && funcdef){ //add constants to funcdef at end by adding sum as constant - only for pure constant terms
                     if (sumfunc.name ==""){
-                        sumfunc = createdfunc("constant",0,[sum](){return sum;});
+                        sumfunc = createdfunc("constant",funcargnum,[sum](){return sum;});
                     } else {
-                        sumfunc = concat(addition,{sumfunc,createdfunc("constant",0,[sum](){return sum;})});
+                        sumfunc = compose(addition,{sumfunc,createdfunc("constant",funcargnum,[sum](){return sum;})});
                     }
-                    assigner(sumfunc,{},assignlist);
+                    vector<int> assignlist = upperassignlist;
+                    for (int arg: upperassignlist){
+                        assignlist.push_back(arg);
+                    }
+                    sumfunc = assigner(sumfunc,assignlist);
                 }
-    if(funcdef){
+
+    if(funcdef){ //determine whether to output sum or sumfunc
         if(funcvarstartin==-2){
             sumfunc.name = funclist[size(funclist)-1].name;
             funclist[size(funclist)-1]=sumfunc;
         }
+        varlist.erase(varlist.begin()+funcargnum,varlist.end()); //erase function variables from arglist to free up variable names
         return evalresult(sumfunc);
     } else{
         return evalresult(sum);
     }
     }
-return(evalresult(errval(560)));
+
+return(evalresult(errval(560))); //error code if no return value for some reason
 }
 //test code
 int main(){
-    auto c = functionparse("f(x) = sqrt(2x)");
+    functioneval(functionparse("a = 2+-1"));
+    auto c = functionparse("f(x,y,z)=sqrt(xy)+acos(x+2)-2xz");
     functioneval(c);
-    auto d = functioneval(functionparse("f(2)"));
+    auto d = functioneval(functionparse("f(5,5,2)"));
     cout<<d.erval;
     return 0;
 }
