@@ -43,7 +43,10 @@ vector<createdfunc> funclist = {
                                 createdfunc("inverse",1,[](vector <errval> a){return a[0]*(-1.0);}),
                                 createdfunc("ln",1,[](vector<errval> a){return log(a[0]);}),
                                 createdfunc("log",1,[](vector<errval> a){return log10(a[0]);}),
-                                createdfunc("loga",2,[](vector<errval> a){return log(a[0],a[1]);})
+                                createdfunc("loga",2,[](vector<errval> a){return log(a[0],a[1]);}),
+                                createdfunc("arccos",1,[](vector<errval>a){return acos(a[0]);}),
+                                createdfunc("arcsin",1,[](vector<errval>a){return asin(a[0]);}),
+                                createdfunc("arctan",1,[](vector<errval>a){return atan(a[0]);})
                             };
 
 vector<createdvar> varlist = {

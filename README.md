@@ -27,6 +27,9 @@ Erratta
     - cos
     - sin
     - tan
+    - arcsin
+    - arccos
+    - arctan
     - ln
     - log
     - arbitrary log base

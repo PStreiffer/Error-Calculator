@@ -136,6 +136,16 @@ errval tan(errval x){
     return errval(tan(x.val), funcerr([](vector<double> a){return tan(a[0]);}, {x}));
 }
 
+errval asin(errval x){
+    return errval(asin(x.val), funcerr([](vector<double> a){return asin(a[0]);},{x}));
+}
+errval acos(errval x){
+    return errval(acos(x.val), funcerr([](vector<double> a){return acos(a[0]);},{x}));
+}
+errval atan(errval x){
+    return errval(atan(x.val), funcerr([](vector<double> a){return atan(a[0]);},{x}));
+}
+
 errval log(errval x){
     return errval(log(x.val),funcerr([](vector<double> a){return log(a[0]);},{x}));
 }
