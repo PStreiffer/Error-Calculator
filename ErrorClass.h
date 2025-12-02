@@ -142,3 +142,6 @@ errval log(errval x){
 errval log10(errval x){
     return errval(log(x.val), funcerr([](vector<double> a){return log10(a[0]);}, {x}));
 }
+errval log(errval x, errval y){
+    return log(x)/log(y);
+}

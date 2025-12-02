@@ -42,7 +42,8 @@ vector<createdfunc> funclist = {
                                 createdfunc("tan",1,[](vector<errval> a){return tan(a[0]);}),
                                 createdfunc("inverse",1,[](vector <errval> a){return a[0]*(-1.0);}),
                                 createdfunc("ln",1,[](vector<errval> a){return log(a[0]);}),
-                                createdfunc("log",1,[](vector<errval> a){return log10(a[0]);})
+                                createdfunc("log",1,[](vector<errval> a){return log10(a[0]);}),
+                                createdfunc("loga",2,[](vector<errval> a){return log(a[0],a[1]);})
                             };
 
 vector<createdvar> varlist = {

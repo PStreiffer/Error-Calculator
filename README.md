@@ -29,6 +29,7 @@ Erratta
     - tan
     - ln
     - log
+    - arbitrary log base
     - powers, eg. e^x
     - multiplication
     - division
