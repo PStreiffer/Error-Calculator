@@ -283,11 +283,11 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
                     sumfunc = assigner(sumfunc,assignlist);
                 }
 
-    if(funcdef){ //determine whether to output sum or sumfunc
+    if(funcdef){ //determine whether to output sum or sumfunc, and erase funcvariables if necessary
         if(funcvarstartin==-2){
             sumfunc.name = funclist[size(funclist)-1].name;
             funclist[size(funclist)-1]=sumfunc;
-            varlist.erase(varlist.begin()+funcargnum,varlist.end()); //erase function variables from arglist to free up variable names
+            varlist.erase(varlist.begin()+funcargnum+funcvarstart-1,varlist.end()); //erase function variables from arglist to free up variable names
         }
         
         return evalresult(sumfunc);

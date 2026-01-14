@@ -50,7 +50,7 @@ int main(){
                     cout<<result.varval.name<<" = "<<result.varval.value<<"\n";
                     break;
             }
-            cout<<"\n";
         }
+        cout<<"\n";
     }
 }

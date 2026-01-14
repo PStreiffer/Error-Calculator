@@ -16,12 +16,14 @@ Syntax
 - all functions must be followed by a valid set of parentheses to contain its arguments.
 - implicit functions and implicit variable definitions are not supported.
 - some functions are predefined. A full list of these may be found in varlist.h, along with a list of predefined variables. These may be altered and will automatically be recognized, should you choose to add more default functions/variables or remove those already there. WARNING: some operations are not supported, such as csc, sec, and cot, and the hyperbolic functions. A list of all functions currently supported may be found further below.
-- variables defined first take precedent, but variables with the same name will be replaced with the one most recently created.
+- variables defined first take precedent, but variables with the same name will be replaced with the one most recently created. This includes function variables; if using a function variable with the same name as a preexisting variable, the preexisting variable will be used instead.
 - separate arguments in functions by commas.
 
 Erratta
 - This calculator may be innaccurate for certain particularly large errors due to C++'s limitations in rounding and doubles. This should not be very noticeable for small error or small variables (which are the main focus of this calculator anyway), but bewarned that they may not always be accurate. This should not generally affect value calculations, however.
+
 - This calculator uses the derivative method of error propagation, calculating the error of a function based on a specific variable as the partial derivative with respect to that variable, evaluated at a point, times the error of the variable at that point. The total error of a function is equal to the vector sum of all of the individual errors with respect to each variable.
+
 - To modify the source code, download the full file and modify as necessary. The compilation was done on main.cpp, and can be recompiled (perhaps using new default funcs) from there.
   
 The full list of functions that are currently supported by default are:
