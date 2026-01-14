@@ -1,7 +1,5 @@
 This is a calculator designed to make calculations with error. This process turns out to be quite simple to do, but takes a very long time to perform by hand especially for complicated calculations involving multiple variables, many terms with error, and complex functions. The calculator simplifies this into simple entry, like a normal calculator.
 
-To use this calculator, simply download ErrorCalculator.exe and run it. It will open a terminal window, where you may enter functions.
-
 This calculator supports three basic functions, which include many different operations.
 
 1. Basic Evaluation: typing an expression using the correct syntax, the calculator will automatically evaluate it and give a decimal answer. If any variables with error are included, the error will be shown as well.
