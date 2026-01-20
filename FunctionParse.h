@@ -118,12 +118,14 @@ vector<vector<double>> functionparse(string input){
                     argnum++;
                 } else { //new variable creation
                     if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
-                    for(int varnum = 0; varnum<size(varlist);varnum++){ //test if redefining: if so, remove old def
+                    errval previousvar = errval(0); //assign value to new variable: used if there is an old def to ensure continuity of value, will be overwritten in funceval
+                    for(int varnum = 0; varnum<size(varlist);varnum++){ //test if redefining: if so, carry through value & remove old def
                         if (varlist[varnum].name == s[0]){
+                            previousvar = varlist[varnum].value;
                             varlist.erase(varlist.begin()+varnum);
                         }
                     }
-                    varlist.push_back(createdvar(s[0],errval(0)));
+                    varlist.push_back(createdvar(s[0],previousvar));
                     argpostype.push_back({-5,static_cast<double>(size(varlist)-1)});
                     i+=size(s);
                     s.erase();
