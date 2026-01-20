@@ -91,9 +91,11 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
             
             if(arglist[i][0] == -15695){ //determine if error included: if so, evaluate before ± then vectorsum errors - i is location of ±
                 value = functioneval(vector<vector<double>>(arglist.begin()+2,arglist.begin()+i)).erval;
-                if(arglist[i+2][0] == '%'){
-                    arglist[i+1][1]*=0.01;
-                    arglist[i+1][1]*=value.val;
+                if(size(arglist) >= i+3){
+                    if(arglist[i+2][0] == '%'){
+                        arglist[i+1][1]*=0.01;
+                        arglist[i+1][1]*=value.val;
+                    }
                 }
                 value.err = vectorsum({value.err,arglist[i+1][1]});
                 found = true;

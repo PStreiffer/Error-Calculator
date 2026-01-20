@@ -187,7 +187,7 @@ vector<vector<double>> functionparse(string input){
     for(int argnum = 0; argnum<size(argpostype);argnum++){ //closed paren addition
         if(argpostype[argnum][0]==')'){
             try{
-                    for(int i2 = size(argpostype)-2;i2>=0;i2--){
+                    for(int i2 = argnum-1;i2>=0;i2--){
                         if(argpostype[i2][0] == '('){
                             if(size(argpostype[i2])==1){
                                 argpostype[i2].push_back(argnum-i2);
