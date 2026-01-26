@@ -50,5 +50,5 @@ vector<createdfunc> funclist = {
                             };
 
 vector<createdvar> varlist = {
-                                createdvar('e',errval(exp(1.0),1.0))
+                                createdvar('e',errval(exp(1.0),0.0))
                             };
