@@ -120,8 +120,12 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
         if (arglist[i][0] == '('){ //paren recursion - if paren detected, input enclosed arguments into functioneval
             vector<vector<double>>tempargs (arglist.begin()+i+1,arglist.begin()+i+arglist[i][1]); 
             vector<int> commanum = {}; //indices of commas in paren
+            int infunctil = -1; //flag for how long inside another function , to evaluate as block 
             for(int arg = 0; arg<size(tempargs);arg++){ //check how many args
-                if(tempargs[arg][0] == ','){
+                if(tempargs[arg][0] == -1){
+                    infunctil = arg + 1 + tempargs[arg+1][1];
+                }
+                if(tempargs[arg][0] == ',' && arg>infunctil){
                     commanum.push_back(arg);
                 }
             }
@@ -289,7 +293,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
         if(funcvarstartin==-2){
             sumfunc.name = funclist[size(funclist)-1].name;
             funclist[size(funclist)-1]=sumfunc;
-            varlist.erase(varlist.begin()+funcargnum+funcvarstart-1,varlist.end()); //erase function variables from arglist to free up variable names
+            varlist.erase(varlist.begin()+funcvarstart,varlist.begin()+funcvarstart+funcargnum); //erase function variables from arglist to free up variable names
         }
         
         return evalresult(sumfunc);
