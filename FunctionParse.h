@@ -7,8 +7,8 @@
 #pragma once
 using namespace std;
 
-
 vector<vector<double>> functionparse(string input){
+    //setup functionlist to find position of inverse() function, setup arglist to detect
     int inversepos;
     sort(funclist.begin(),funclist.end(),[](createdfunc x, createdfunc y){return size(x.name)>size(y.name);});
     for (int funcnum = 0; funcnum <size(funclist);funcnum++){
@@ -19,8 +19,19 @@ vector<vector<double>> functionparse(string input){
     }
     vector<char> arglist = {'*','+','/','^', '(', ')','=',',','%'};
 
+    //sanitize input: remove spaces
+        string sanitizedinput = "";
+        for(char charin: input){
+            if(charin != ' '){
+                sanitizedinput+=charin;
+            }
+        }
+        input = sanitizedinput;
+
+    vector<double> funcvarpos = {}; //locations of function variables
     vector<vector<double>> argpostype = {};
     signed int equalnum = -1;
+    try{
     for (int i = 0; i<input.length();i++){ //identify per-character operators
         for(int argnum=0; argnum < arglist.size();argnum++){ //basic operators in arglist
             
@@ -32,7 +43,7 @@ vector<vector<double>> functionparse(string input){
                 break;
             }
             if(input[i]=='-'){ //convert - signs into inversions
-                if(argpostype[size(argpostype)-1][0] < 0){
+                if(argpostype[size(argpostype)-1][0] <= 0){
                 argpostype.push_back({'+'});
                 }
                 argpostype.push_back({-1,static_cast<double>(inversepos)});
@@ -59,7 +70,7 @@ vector<vector<double>> functionparse(string input){
             while(isdigit(input[n]) || input[n]=='.' ||input[n]=='E'||(input[n-1]=='E'&&input[n]=='-')){
                 if(input[n]=='E'&& (isdigit(input[n+1]) && false||input[n+1]!='-')){
                     cout << "Invalid scientific notation";
-                    return {{560}};
+                    throw(1);
                 }
                 s+=static_cast<char>(input[n]);
                 n++;
@@ -86,19 +97,26 @@ vector<vector<double>> functionparse(string input){
             equalnum = input.find("=");
             }
             //function/var creation handling
+            
             if(static_cast<signed int>(i+size(s)) <= equalnum){    //if there is an equal sign
                 int argnum = 0;        
                 if(input[i+size(s)]=='('){ //function creation
                     if(size(argpostype)>0){
                     cout<<"Does not support explicit functions\n";
-                    return {{560}};
+                    throw(2);
                     }
-                    for(int funcnum; funcnum<size(funclist);funcnum++){
-                        if(funclist[funcnum].name==s){
+                    bool funcexists = false; //variable storing if function exists
+                    for(int funcnum = 0; funcnum<size(funclist);funcnum++){ //test if function already created
+                        if(funclist[funcnum].name==s){ //mark if function exists
+                            funcexists = true;
+                            funclist.push_back(createdfunc(s,funclist[funcnum].argnum, funclist[funcnum].namedfunc));
                             funclist.erase(funclist.begin()+funcnum);
+                            break;
                         }
                     }
-                    funclist.push_back(createdfunc(s,1,[](vector<errval> x){return 0;}));
+                    if(!funcexists){ //create empty function if function does not exist
+                        funclist.push_back(createdfunc(s,1,[](vector<errval> x){return 0;}));
+                    }
                     argpostype.push_back({-3,static_cast<double>(size(funclist)-1)});
                     i+=size(s);
                     s.erase();
@@ -107,17 +125,18 @@ vector<vector<double>> functionparse(string input){
                     for(int varnum; varnum<size(varlist);varnum++){ //test if variable already exists
                         if (varlist[varnum].name == s[0]){
                             cout<<"Function variables may not share names with defined variables";
-                            return {{560}};
+                            throw(3);
                         }
                     }
-                    if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
+                    if(size(s)>1){cout<<"Does not support variables with multi-char names\n";throw(3);}
                     varlist.push_back(createdvar(s[0],errval(0)));
                     argpostype.push_back({-4,static_cast<double>(size(varlist)-1)});
+                    funcvarpos.push_back(size(varlist)-1);
                     i+=size(s);
                     s.erase();
                     argnum++;
                 } else { //new variable creation
-                    if(size(s)>1){cout<<"Does not support variables with multi-char names\n";return{{560}};}
+                    if(size(s)>1){cout<<"Does not support variables with multi-char names\n";throw(4);}
                     errval previousvar = errval(0); //assign value to new variable: used if there is an old def to ensure continuity of value, will be overwritten in funceval
                     for(int varnum = 0; varnum<size(varlist);varnum++){ //test if redefining: if so, carry through value & remove old def
                         if (varlist[varnum].name == s[0]){
@@ -164,7 +183,7 @@ vector<vector<double>> functionparse(string input){
                 }
                 } catch (char x){ //catch any invalid variables
                     cout<<"\'"<< x <<"\' is an invalid variable";
-                    return {{560}};
+                    throw(5);
                 }
                 if (funcinsert[0] != 0){ //add function into arglist
                     if(size(argpostype)>0){
@@ -204,17 +223,42 @@ vector<vector<double>> functionparse(string input){
                     }
                     } catch (int x){ //closed paren verification - make sure enough open paren for closed
                         cout<<"Invalid closed parentheses\n";
-                        return {{560}};
+                       throw(6);
                     }
         }
     }
     for(int argnum = 0; argnum<size(argpostype);argnum++){//open paren verification - make sure every open paren has a closed one
         if(argpostype[argnum][0] == '('&&size(argpostype[argnum])==1){ //invalid open paren detection
             cout<<"Invalid open parentheses\n";
-            return {{560}};
+            throw(7);
         }
     }
     return argpostype;
+} catch (int errtype){ //special error handling
+    switch(errtype){
+        case 1: //Invalid Scientific Notation
+            break;
+        case 2: //Does not support explicit functions
+            break;
+        case 3: //Function variables may not share names with defined variables
+            break;
+        case 4: //Does not support variables with multi-char names
+            break;
+        case 5: //invalid variable
+            break;
+        case 6: //Invalid closed parentheses
+            break;
+        case 7: //Invalid open parentheses
+            break;
+
+    }
+    if(size(funcvarpos)>0){ //erase function variables
+        for(double i: funcvarpos){
+            varlist.erase(varlist.begin()+i);
+        }
+    }
+    return {{560}};
+}
 }
 /* test cases
 
