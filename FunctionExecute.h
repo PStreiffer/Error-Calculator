@@ -122,7 +122,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
             vector<int> commanum = {}; //indices of commas in paren
             int infunctil = -1; //flag for how long inside another function , to evaluate as block 
             for(int arg = 0; arg<size(tempargs);arg++){ //check how many args
-                if(tempargs[arg][0] == -1){
+                if(tempargs[arg][0] == -1 && arg>infunctil){
                     infunctil = arg + 1 + tempargs[arg+1][1];
                 }
                 if(tempargs[arg][0] == ',' && arg>infunctil){
