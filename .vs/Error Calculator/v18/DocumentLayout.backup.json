@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Coding\\Error-Calculator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|C:\\Coding\\Error-Calculator\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|C:\\Coding\\Error-Calculator\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|C:\\Coding\\Error-Calculator\\FunctionParse.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|solutionrelative:FunctionParse.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|C:\\Coding\\Error-Calculator\\funcvarlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5BF89B84-7837-0C6E-7463-2299FD19671D}|Error Calculator.vcxproj|solutionrelative:funcvarlist.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +31,74 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Coding\\Error-Calculator\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Coding\\Error-Calculator\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAASAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-01-28T03:52:31.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FunctionParse.h",
+              "DocumentMoniker": "C:\\Coding\\Error-Calculator\\FunctionParse.h",
+              "RelativeDocumentMoniker": "FunctionParse.h",
+              "ToolTip": "C:\\Coding\\Error-Calculator\\FunctionParse.h",
+              "RelativeToolTip": "FunctionParse.h",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAYwFgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-28T03:47:31.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Coding\\Error-Calculator\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Coding\\Error-Calculator\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC4AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-28T02:50:37.711Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "3c79014d-7e47-4ba4-aa48-a9912bbab013",
+        "Display": 0,
+        "X": 1294,
+        "Y": 242,
+        "Width": 1199,
+        "Height": 570,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "funcvarlist.h",
+              "DocumentMoniker": "C:\\Coding\\Error-Calculator\\funcvarlist.h",
+              "RelativeDocumentMoniker": "funcvarlist.h",
+              "ToolTip": "C:\\Coding\\Error-Calculator\\funcvarlist.h",
+              "RelativeToolTip": "funcvarlist.h",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-28T03:51:40.314Z",
               "EditorCaption": ""
             }
           ]

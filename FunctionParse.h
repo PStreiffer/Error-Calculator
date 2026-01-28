@@ -69,7 +69,7 @@ vector<vector<double>> functionparse(string input){
             int n = i+1;
             while(isdigit(input[n]) || input[n]=='.' ||input[n]=='E'||(input[n-1]=='E'&&input[n]=='-')){
                 if(input[n]=='E'&& (isdigit(input[n+1]) && false||input[n+1]!='-')){
-                    cout << "Invalid scientific notation";
+                    cout << "Invalid scientific notation\n";
                     throw(1);
                 }
                 s+=static_cast<char>(input[n]);
@@ -124,7 +124,7 @@ vector<vector<double>> functionparse(string input){
                 } else if (input[i+1]==',' || input[i+1]==')'){ //function variable creation
                     for(int varnum; varnum<size(varlist);varnum++){ //test if variable already exists
                         if (varlist[varnum].name == s[0]){
-                            cout<<"Function variables may not share names with defined variables";
+                            cout<<"Function variables may not share names with defined variables\n";
                             throw(3);
                         }
                     }
@@ -182,7 +182,7 @@ vector<vector<double>> functionparse(string input){
 
                 }
                 } catch (char x){ //catch any invalid variables
-                    cout<<"\'"<< x <<"\' is an invalid variable";
+                    cout<<"\'"<< x <<"\' is an invalid variable\n";
                     throw(5);
                 }
                 if (funcinsert[0] != 0){ //add function into arglist
