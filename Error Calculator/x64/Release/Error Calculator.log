@@ -1,0 +1,549 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.50.35717\include\variant(12): warning STL4038: The contents of <variant> are available only with C++17 or later.
+C:\Coding\Error-Calculator\FunctionParse.h(93,28): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(97,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(121,28): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(134,55): warning C4244: 'argument': conversion from 'unsigned __int64' to '_Ty', possible loss of data
+C:\Coding\Error-Calculator\FunctionParse.h(134,55): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionParse.h(134,55): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionParse.h(134,55): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionParse.h(134,55): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(135,28): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(149,28): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(153,27): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(158,32): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(197,27): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(204,77): warning C4244: 'argument': conversion from '_Ty' to 'const __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionParse.h(204,77): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionParse.h(204,77): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionParse.h(204,77): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionParse.h(204,77): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(257,43): warning C4244: 'argument': conversion from 'double' to 'const __int64', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionParse.h(224,34): warning C4101: 'x': unreferenced local variable
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(74,40): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(74,40): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(74,40): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(74,40): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(74,40): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(109,33): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(109,33): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(109,33): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(109,33): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(109,33): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(110,40): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(110,40): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(110,40): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(110,40): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(110,40): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(114,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(121,95): warning C4244: 'argument': conversion from '_Ty' to 'const __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(121,95): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(121,95): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(121,95): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(121,95): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(126,41): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(126,41): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(126,41): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(126,41): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(126,41): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(133,40): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(133,40): warning C4267:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(133,40): warning C4267:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(133,40): warning C4267:             _Ty=int
+C:\Coding\Error-Calculator\FunctionExecute.h(133,40): warning C4267:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(145,79): warning C4244: 'argument': conversion from '_Ty' to 'const __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(145,79): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(145,79): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(145,79): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(145,79): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(164,54): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(164,54): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(164,54): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(164,54): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(164,54): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(167,70): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(167,70): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(167,70): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(167,70): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(167,70): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(171,46): warning C4244: 'initializing': conversion from '_Ty' to 'int', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(171,46): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(171,46): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(171,46): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(171,46): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(171,31): warning C4244: 'initializing': conversion from '_Ty' to 'const int', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(171,31): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(171,31): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(171,31): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(171,31): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(180,38): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(180,38): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(180,38): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(180,38): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(180,38): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(180,80): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(180,80): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(180,80): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(180,80): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(180,80): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(181,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(181,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(181,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(181,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(181,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(181,74): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(181,74): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(181,74): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(181,74): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(181,74): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(181,99): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(181,99): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(181,99): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(181,99): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(181,99): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(183,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(183,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(183,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(183,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(183,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(183,82): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(183,82): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(183,82): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(183,82): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(183,82): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(183,107): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(183,107): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(183,107): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(183,107): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(183,107): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(185,56): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(185,56): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(185,56): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(185,56): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(185,56): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(185,58): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(185,58): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(185,58): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(185,58): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(185,58): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(190,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(190,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(190,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(190,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(190,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(190,82): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(190,82): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(190,82): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(190,82): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(190,82): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(198,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(198,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(198,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(198,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(198,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(198,81): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(198,81): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(198,81): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(198,81): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(198,81): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(198,125): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(198,125): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(198,125): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(198,125): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(198,125): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(198,167): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(198,167): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(198,167): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(198,167): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(198,167): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(201,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(201,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(201,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(201,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(201,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(201,76): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(201,76): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(201,76): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(201,76): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(201,76): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(201,107): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(201,107): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(201,107): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(201,107): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(201,107): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(203,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(203,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(203,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(203,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(203,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(203,89): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(203,89): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(203,89): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(203,89): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(203,89): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(203,121): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(203,121): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(203,121): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(203,121): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(203,121): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(204,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(204,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(204,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(204,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(204,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(209,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(209,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(209,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(209,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(209,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(209,82): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(209,82): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(209,82): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(209,82): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(209,82): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(212,35): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(212,35): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(212,35): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(212,35): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(212,35): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(221,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(221,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(221,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(221,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(221,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(221,81): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(221,81): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(221,81): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(221,81): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(221,81): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(221,125): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(221,125): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(221,125): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(221,125): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(221,125): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(221,167): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(221,167): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(221,167): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(221,167): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(221,167): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(222,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(222,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(222,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(222,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(222,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(222,71): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(222,71): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(222,71): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(222,71): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(222,71): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(224,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(224,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(224,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(224,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(224,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(224,98): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(224,98): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(224,98): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(224,98): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(224,98): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(224,130): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(224,130): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(224,130): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(224,130): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(224,130): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(225,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(225,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(225,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(225,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(225,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(230,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(230,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(230,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(230,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(230,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(230,82): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(230,82): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(230,82): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(230,82): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(230,82): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(232,35): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(232,35): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(232,35): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(232,35): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(232,35): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(238,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(238,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(238,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(238,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(238,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(238,81): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(238,81): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(238,81): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(238,81): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(238,81): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(238,125): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(238,125): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(238,125): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(238,125): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(238,125): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(238,167): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(238,167): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(238,167): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(238,167): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(238,167): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(239,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(239,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(239,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(239,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(239,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(239,71): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(239,71): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(239,71): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(239,71): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(239,71): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(241,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(241,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(241,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(241,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(241,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(241,92): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(241,92): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(241,92): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(241,92): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(241,92): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(241,124): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(241,124): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(241,124): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(241,124): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(241,124): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(242,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(242,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(242,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(242,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(242,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(247,39): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(247,39): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(247,39): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(247,39): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(247,39): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(247,82): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(247,82): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(247,82): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(247,82): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(247,82): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(249,35): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(249,35): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(249,35): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(249,35): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(249,35): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(257,35): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(260,36): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(260,36): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(260,36): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(260,36): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(260,36): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(261,40): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(261,40): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(261,40): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(261,40): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(261,40): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(261,83): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(261,83): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(261,83): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(261,83): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(261,83): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(262,46): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(262,46): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(262,46): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(262,46): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(262,46): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(265,65): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(265,65): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(265,65): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(265,65): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(265,65): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(266,60): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(266,60): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(266,60): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(266,60): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(266,60): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\FunctionExecute.h(268,83): warning C4244: 'argument': conversion from '_Ty' to 'const unsigned __int64', possible loss of data
+C:\Coding\Error-Calculator\FunctionExecute.h(268,83): warning C4244:         with
+C:\Coding\Error-Calculator\FunctionExecute.h(268,83): warning C4244:         [
+C:\Coding\Error-Calculator\FunctionExecute.h(268,83): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\FunctionExecute.h(268,83): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Coding\Error-Calculator\main.cpp(29,41): warning C4244: '=': conversion from '_Ty' to 'int', possible loss of data
+C:\Coding\Error-Calculator\main.cpp(29,41): warning C4244:         with
+C:\Coding\Error-Calculator\main.cpp(29,41): warning C4244:         [
+C:\Coding\Error-Calculator\main.cpp(29,41): warning C4244:             _Ty=double
+C:\Coding\Error-Calculator\main.cpp(29,41): warning C4244:         ]
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/OPT:ICF' specification
+  Error Calculator.vcxproj -> C:\Coding\Error-Calculator\x64\Release\Error Calculator.exe
