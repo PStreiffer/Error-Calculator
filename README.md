@@ -11,7 +11,8 @@ This calculator supports three basic functions, which include many different ope
 
 Syntax
 
-- variable names may only be one uppercase or lowercase character from the standard English alphabet. 'e' & 'E' are not allowed as variable names, though 'e' is already defined as the Euler's number, e = 2.7182...
+- variable names may only be one uppercase or lowercase character from the standard English alphabet. 'E' is not allowed as a variable name, as it is used for scientific notation.
+- the constants e, c, h, and g are predefined to be euler's number, e = 2.71828..., the speed of light, c = 300,000,000, planck's constant, h = 6.62607015*10^-34, and the acceleration due to gravity on Earth, g = 9.80665. These may be overwritten by redefining the variables.
 - implicit multiplication is recognized.
 - functions with longer names take priority over shorter ones. For instance, 'arccos' will be recognized before 'cos'.
 - all functions must be followed by a valid set of parentheses to contain its arguments.
