@@ -1,4 +1,5 @@
 This is a calculator designed to make calculations with error. This process turns out to be quite simple to do, but takes a very long time to perform by hand especially for complicated calculations involving multiple variables, many terms with error, and complex functions. The calculator simplifies this into simple entry, like a normal calculator.
+The update release, which should function as a standalone executable, may be found in ~/x64/Release.
 
 This calculator supports three basic functions, which include many different operations.
 
@@ -20,7 +21,7 @@ Syntax
 - separate arguments in functions by commas.
 
 Erratta
-- This calculator may be innaccurate for certain particularly large errors due to C++'s limitations in rounding and doubles. This should not be very noticeable for small error or small variables (which are the main focus of this calculator anyway), but bewarned that they may not always be accurate. This should not generally affect value calculations, however.
+- This calculator may be innaccurate for certain particularly large errors due to C++'s limitations in rounding and doubles. This should not be very noticeable for small error or small variables (which are the main focus of this calculator anyway), but bewarned that they may not always be accurate. This should not generally affect value calculations, however it may be wise to perform sanity checks at times.
 
 - This calculator uses the derivative method of error propagation, calculating the error of a function based on a specific variable as the partial derivative with respect to that variable, evaluated at a point, times the error of the variable at that point. The total error of a function is equal to the vector sum of all of the individual errors with respect to each variable.
 
