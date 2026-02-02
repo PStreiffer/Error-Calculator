@@ -1,4 +1,5 @@
 This is a calculator designed to make calculations with error. This process turns out to be quite simple to do, but takes a very long time to perform by hand especially for complicated calculations involving multiple variables, many terms with error, and complex functions. The calculator simplifies this into simple entry, like a normal calculator.
+
 The updated release, which should function as a standalone executable, may be found in ~/x64/Release.
 
 This calculator supports three basic functions, which include many different operations.
