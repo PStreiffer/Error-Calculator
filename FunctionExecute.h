@@ -143,7 +143,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
                 calargs.push_back(functioneval(tempargs,funcdef,funcvarstart));
             }
             arglist.erase(arglist.begin()+i+1,arglist.begin()+i+1+arglist[i][1]);
-            arglist[i] = {-9,static_cast<double>(size(calargs)-1)}; //-9 used to inicate value has been evaluated, and is in calargs
+            arglist[i] = {-9,static_cast<double>(size(calargs)-1)}; //-9 used to indicate value has been evaluated, and is in calargs
         }
     }
 
@@ -168,7 +168,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
                 }
                 arglist[i] = {-9,static_cast<double>(size(calargs)-1)};
             } else { //if is, add as function instead, returning same value out as appropriate index 
-                const int arg = arglist[i][1]-funcvarstart;
+                int arg = arglist[i][1]-funcvarstart;
                 calargs.push_back(evalresult(createdfunc(
                     "funcvar",
                     funcargnum,
@@ -210,7 +210,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
                 
             }
             calargs[arglist[i+1][1]].resulttype = 0;
-            arglist.erase(arglist.begin()+i,arglist.begin()+i+1);
+            arglist.erase(arglist.begin()+i,arglist.begin()+i+2);
         }
         
     }
@@ -254,7 +254,7 @@ evalresult functioneval(vector<vector<double>> arglist, bool funcdef = false, in
 
     errval sum = errval(0); //accumulator
     createdfunc sumfunc; //function accumulator
-    sumfunc.argnum = size(varlist)-funcvarstart;
+    sumfunc.argnum = funcargnum;
     for(int i = 0; i<size(arglist);i++){ //addition
         if(arglist[i][0]==-9){
             if(calargs[arglist[i][1]].resulttype!=0){ //check to see if already incorporated
