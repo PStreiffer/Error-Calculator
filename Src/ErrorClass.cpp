@@ -1,0 +1,175 @@
+
+bool errcorrection = false;
+
+#include "ErrorClass.h"
+
+
+        errval::errval(){
+            val = 0;
+            err = 0;
+        }
+        errval::errval(double value = 0, double error = 0){ //initialize val and err; err is always +
+            val = value;
+            err = abs(error);
+        }
+
+        errval::errval(int value){
+            val = value;
+            err = 0;
+        }
+
+        errval errval::operator+(errval rhs){ //addition operator
+            double val1 = val +  rhs.val; //add vals together - simple addition
+            double err1 = vectorsum({err,rhs.err}); //take vectorsum, as addition always gives error equal to vectorsum
+            return errval(val1,err1);
+        }
+        errval errval::operator+(double rhs){
+            return operator+(errval(rhs));
+        }
+        errval errval::operator-(errval rhs){ //same as addition
+            double val1 = val - rhs.val;
+            double err1 = vectorsum({err,rhs.err});
+            return errval(val1,err1);
+        }
+        errval errval::operator-(double rhs){
+            return operator-(errval(rhs));
+        }
+        errval errval::operator*(double rhs){
+            return operator*(errval(rhs));
+        }
+        errval errval::operator/(double rhs){
+            return operator/(errval(rhs));
+        }
+        
+        errval errval::operator+=(errval rhs){
+            *this = *this + rhs;
+            return *this;
+        }
+        errval errval::operator-=(errval rhs){
+            *this = *this - rhs;
+            return *this;
+        }
+        errval errval::operator*=(errval rhs){
+            *this = *this * rhs;
+            return *this;
+        }
+        errval errval::operator /= (errval rhs){
+            *this = *this / rhs;
+            return *this;
+        }
+
+        bool errval::operator> (errval rhs){
+            return val > rhs.val;
+        };
+        bool errval::operator> (double rhs){
+            return val > rhs;
+        };
+        bool errval::operator< (errval rhs){
+            return val < rhs.val;
+        };
+        bool errval::operator< (double rhs){
+            return val < rhs;
+        };
+        bool errval::operator!=(errval rhs){
+            return (val != rhs.val && err != rhs.err);
+        }
+        bool errval::operator!=(double rhs){
+            return (val != rhs);
+        }
+        bool errval::operator==(errval rhs){
+            return (val == rhs.val && err == rhs.err);;
+        }
+        bool errval::operator==(double rhs){
+            return (val == rhs && err == 0);
+        }
+        std::ostream& operator<<(std::ostream& stream, const errval& errval){ //output stream
+            stream << errval.val << " +- " << errval.err;
+            return stream;
+        }
+
+double funcerr(double (*f)(vector<double>), vector<errval> values){ //function for taking error of function based on values, error
+    vector<double> vals = {};
+    //put all values into one vector
+    for(int i = 0; i<size(values);i++){
+        vals.push_back(values[i].val);
+    }
+    //calculate individual errors of function based on function & values + error
+    vector<double> subterms = {};
+    for(int i=0; i<size(vals);i++){
+        double val = 0;
+        try{
+            val = partial(f,vals,i)*values[i].err;
+            if(5*abs(val)>abs(val)||val ==0){
+            } else{
+                val = 0;
+                if(!errcorrection){
+                    cout<<"Warning: error adjusted as error is undefined due to range, dividing by 0, etc; setting term equal to 0"<<"\n";
+                    errcorrection = true;
+                }
+            }
+        } catch (...){
+            val = 0;
+            if(!errcorrection){
+                cout<<"Warning: error adjusted as error is undefined due to range, dividing by 0, etc; setting term equal to 0"<<"\n";
+                errcorrection = true;
+            }
+        }
+        subterms.push_back(val); //add each partial to subterms
+    }
+    return vectorsum(subterms); //calculate vectorsum
+}
+
+errval errval::operator*(errval rhs){ //actual definiton of *
+    double err1 = funcerr(
+        [](vector<double> a){return a[0]*a[1];}, //define lambda function that multiplies two values
+        {*this,rhs} //use errorvals as inputs to function
+    ); 
+    double val1 = val * rhs.val; //multiply values together
+    return errval(val1,err1);
+}
+errval errval::operator/(errval rhs){ //actual definition of divison
+    double err1 = funcerr(
+        [](vector<double> a){return a[0]/a[1];}, //define lambda function that divides two values
+        {*this, rhs}
+    );
+    
+    return errval(val / rhs.val,err1);
+}
+
+errval sqrt(errval x){
+    return errval(sqrt(x.val), funcerr([](vector<double> a){return sqrt(a[0]);}, {x}));
+}
+
+errval pow(errval x, errval y){
+    return errval(pow(x.val,y.val), funcerr([](vector<double> a){return pow(a[0],a[1]);}, {x,y}));
+}
+
+errval sin(errval x){
+    return errval(sin(x.val), funcerr([](vector<double> a){return sin(a[0]);}, {x}));
+}
+errval cos(errval x){
+    return errval(cos(x.val), funcerr([](vector<double> a){return cos(a[0]);}, {x}));
+}
+errval tan(errval x){
+    return errval(tan(x.val), funcerr([](vector<double> a){return tan(a[0]);}, {x}));
+}
+
+errval asin(errval x){
+    return errval(asin(x.val), funcerr([](vector<double> a){return asin(a[0]);},{x}));
+}
+errval acos(errval x){
+    return errval(acos(x.val), funcerr([](vector<double> a){return acos(a[0]);},{x}));
+}
+errval atan(errval x){
+    return errval(atan(x.val), funcerr([](vector<double> a){return atan(a[0]);},{x}));
+}
+
+errval log(errval x){
+    return errval(log(x.val),funcerr([](vector<double> a){return log(a[0]);},{x}));
+}
+errval log10(errval x){
+    return errval(log(x.val), funcerr([](vector<double> a){return log10(a[0]);}, {x}));
+}
+errval log(errval x, errval y){
+    return log(x)/log(y);
+}
