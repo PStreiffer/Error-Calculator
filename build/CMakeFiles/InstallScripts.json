@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/streifferphoebe/coding stuff/Error-Calculator/build/cmake_install.cmake"
+		"G:/Coding/Error-Calculator/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

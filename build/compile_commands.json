@@ -1,44 +1,44 @@
 [
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/main.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/main.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\main.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\main.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/main.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/main.cpp.obj"
 },
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/ErrorClass.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/ErrorClass.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\ErrorClass.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\ErrorClass.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/ErrorClass.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.obj"
 },
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/funcconstructors.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/funcconstructors.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\funcconstructors.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\funcconstructors.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/funcconstructors.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.obj"
 },
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/FunctionExecute.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/FunctionExecute.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\FunctionExecute.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\FunctionExecute.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/FunctionExecute.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.obj"
 },
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/FunctionParse.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/FunctionParse.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\FunctionParse.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\FunctionParse.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/FunctionParse.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.obj"
 },
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/funcvarlist.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/funcvarlist.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\funcvarlist.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\funcvarlist.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/funcvarlist.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.obj"
 },
 {
-  "directory": "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-  "command": "/usr/bin/g++ -I\"/home/streifferphoebe/coding stuff/Error-Calculator/Inc\" -g -o CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o -c \"/home/streifferphoebe/coding stuff/Error-Calculator/Src/mathfuncs.cpp\"",
-  "file": "/home/streifferphoebe/coding stuff/Error-Calculator/Src/mathfuncs.cpp",
-  "output": "/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o"
+  "directory": "G:/Coding/Error-Calculator/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/ErrorCalculator.dir/includes_CXX.rsp -g -o CMakeFiles\\ErrorCalculator.dir\\Src\\mathfuncs.cpp.obj -c G:\\Coding\\Error-Calculator\\Src\\mathfuncs.cpp",
+  "file": "G:/Coding/Error-Calculator/Src/mathfuncs.cpp",
+  "output": "CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.obj"
 }
 ]
