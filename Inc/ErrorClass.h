@@ -9,9 +9,8 @@ class errval{
     public:
     double val;
     double err;
-    errval();
-    errval(double, double);
-    errval(int);
+
+    errval(double value = 0, double err = 0);
 
     errval operator+(errval);
     errval operator+(double);

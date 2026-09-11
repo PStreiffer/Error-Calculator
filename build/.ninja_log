@@ -1,9 +1,16 @@
 # ninja log v7
-2	447	1789143687097961901	CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o	5c071300cbd25899
-3	626	1789143687099178923	CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o	dd17798aa8dbc48e
-2	886	1789143687098185851	CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o	9fb037509d964d2b
-3	766	1789143687098805445	CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o	fa99e59d4e892ab0
-3	844	1789143687098984096	CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o	26db2aebb53c88ff
-3	1133	1789143687098608383	CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o	b992d05b72d5773a
-2	751	1789143687097020169	CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o	ee8d1cfd035ebaaa
-1134	1190	1789143688229010124	ErrorCalculator	6ce70aaafc631f7
+2	781	1789145457957573856	CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o	510b563b24e24158
+3	635	1789145332048561224	CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o	87331b62cd031331
+1	750	1789145457956100207	CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o	a1baac61cc09158f
+1	736	1789145457957289951	CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o	d7731875f836cc02
+2	982	1789145457957799708	CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o	74f5d21c845ae75f
+2	1018	1789145457958291494	CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o	e1d4a2fadefce399
+2	831	1789145457958054814	CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o	a2ddbc8e9b0e4a6a
+1019	1092	1789145458974095010	ErrorCalculator	6ce70aaafc631f7
+5	920	1789146835611147951	CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o	a2ddbc8e9b0e4a6a
+3	1044	1789146835609147927	CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o	74f5d21c845ae75f
+1044	1280	1789146836650160794	ErrorCalculator	6ce70aaafc631f7
+3	931	1789146983064669938	CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o	a2ddbc8e9b0e4a6a
+931	1094	1789146983992691341	ErrorCalculator	6ce70aaafc631f7
+2	975	1789147010274297474	CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o	a2ddbc8e9b0e4a6a
+975	1119	1789147011247319914	ErrorCalculator	6ce70aaafc631f7

@@ -3,19 +3,9 @@ bool errcorrection = false;
 
 #include "ErrorClass.h"
 
-
-        errval::errval(){
-            val = 0;
-            err = 0;
-        }
-        errval::errval(double value = 0, double error = 0){ //initialize val and err; err is always +
+        errval::errval(double value, double error){ //initialize val and err; err is always +
             val = value;
             err = abs(error);
-        }
-
-        errval::errval(int value){
-            val = value;
-            err = 0;
         }
 
         errval errval::operator+(errval rhs){ //addition operator

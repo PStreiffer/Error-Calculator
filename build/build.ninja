@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/streifferphoebe/coding$ stuff/Error-Calculator/build/
+cmake_ninja_workdir = /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build/
 # =============================================================================
 # Object build statements for EXECUTABLE target ErrorCalculator
 
@@ -49,65 +49,65 @@ cmake_ninja_workdir = /home/streifferphoebe/coding$ stuff/Error-Calculator/build
 
 build cmake_object_order_depends_target_ErrorCalculator: phony || .
 
-build CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/main.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/main.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/main.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
 
-build CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/ErrorClass.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/ErrorClass.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/ErrorClass.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
 
-build CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/funcconstructors.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/funcconstructors.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/funcconstructors.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
 
-build CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/FunctionExecute.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/FunctionExecute.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/FunctionExecute.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
 
-build CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/FunctionParse.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/FunctionParse.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/FunctionParse.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
 
-build CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/funcvarlist.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/funcvarlist.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/funcvarlist.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
 
-build CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/coding$ stuff/Error-Calculator/Src/mathfuncs.cpp || cmake_object_order_depends_target_ErrorCalculator
+build CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o: CXX_COMPILER__ErrorCalculator_unscanned_Debug /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Src/mathfuncs.cpp || cmake_object_order_depends_target_ErrorCalculator
   CONFIG = Debug
   DEP_FILE = CMakeFiles/ErrorCalculator.dir/Src/mathfuncs.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/streifferphoebe/coding stuff/Error-Calculator/Inc"
+  INCLUDES = -I/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/Inc
   OBJECT_DIR = CMakeFiles/ErrorCalculator.dir
   OBJECT_FILE_DIR = CMakeFiles/ErrorCalculator.dir/Src
   TARGET_SUPPORT_DIR = CMakeFiles/ErrorCalculator.dir
@@ -137,7 +137,7 @@ build ErrorCalculator: CXX_EXECUTABLE_LINKER__ErrorCalculator_Debug CMakeFiles/E
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/streifferphoebe/coding stuff/Error-Calculator/build" && /opt/st/stm32cubeclt_1.22.0/CMake/bin/ccmake -S"/home/streifferphoebe/coding stuff/Error-Calculator" -B"/home/streifferphoebe/coding stuff/Error-Calculator/build"
+  COMMAND = cd /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build && /opt/st/stm32cubeclt_1.22.0/CMake/bin/ccmake -S/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator -B/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -149,7 +149,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/home/streifferphoebe/coding stuff/Error-Calculator/build" && /opt/st/stm32cubeclt_1.22.0/CMake/bin/cmake --regenerate-during-build -S"/home/streifferphoebe/coding stuff/Error-Calculator" -B"/home/streifferphoebe/coding stuff/Error-Calculator/build"
+  COMMAND = cd /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build && /opt/st/stm32cubeclt_1.22.0/CMake/bin/cmake --regenerate-during-build -S/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator -B/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -165,7 +165,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/streifferphoebe/coding stuff/Error-Calculator/build
+# Folder: /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build
 
 build all: phony ErrorCalculator
 
@@ -176,14 +176,14 @@ build all: phony ErrorCalculator
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /home/streifferphoebe/coding$ stuff/Error-Calculator/build/cmake_install.cmake: RERUN_CMAKE | /home/streifferphoebe/coding$ stuff/Error-Calculator/CMakeLists.txt /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeASMInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeASMLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.1/CMakeASMCompiler.cmake CMakeFiles/4.3.1/CMakeCCompiler.cmake CMakeFiles/4.3.1/CMakeCXXCompiler.cmake CMakeFiles/4.3.1/CMakeSystem.cmake
+build build.ninja /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build/cmake_install.cmake: RERUN_CMAKE | /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/CMakeLists.txt /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeASMInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeASMLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.1/CMakeASMCompiler.cmake CMakeFiles/4.3.1/CMakeCCompiler.cmake CMakeFiles/4.3.1/CMakeCXXCompiler.cmake CMakeFiles/4.3.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/streifferphoebe/coding$ stuff/Error-Calculator/CMakeLists.txt /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeASMInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeASMLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.1/CMakeASMCompiler.cmake CMakeFiles/4.3.1/CMakeCCompiler.cmake CMakeFiles/4.3.1/CMakeCXXCompiler.cmake CMakeFiles/4.3.1/CMakeSystem.cmake: phony
+build /home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/CMakeLists.txt /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeASMInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCXXInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeGenericSystem.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Compiler/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeASMLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCXXLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-ASM.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linker/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-C.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU-CXX.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-GNU.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux-Initialize.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/Linux.cmake /opt/st/stm32cubeclt_1.22.0/CMake/share/cmake-4.3/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.3.1/CMakeASMCompiler.cmake CMakeFiles/4.3.1/CMakeCCompiler.cmake CMakeFiles/4.3.1/CMakeCXXCompiler.cmake CMakeFiles/4.3.1/CMakeSystem.cmake: phony
 
 
 #############################################

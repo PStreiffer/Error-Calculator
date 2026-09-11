@@ -40,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "ErrorCalculator::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ErrorCalculator-Debug-36bfa53725fef2ec199b.json",
+					"jsonFile" : "target-ErrorCalculator-Debug-dc434a6a9110474099c0.json",
 					"name" : "ErrorCalculator",
 					"projectIndex" : 0
 				}
@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/streifferphoebe/coding stuff/Error-Calculator/build",
-		"source" : "/home/streifferphoebe/coding stuff/Error-Calculator"
+		"build" : "/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build",
+		"source" : "/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator"
 	},
 	"version" : 
 	{

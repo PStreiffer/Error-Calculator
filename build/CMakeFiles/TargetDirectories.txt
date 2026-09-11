@@ -1,3 +1,3 @@
-/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir
-/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/edit_cache.dir
-/home/streifferphoebe/coding stuff/Error-Calculator/build/CMakeFiles/rebuild_cache.dir
+/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build/CMakeFiles/ErrorCalculator.dir
+/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build/CMakeFiles/edit_cache.dir
+/home/streifferphoebe/Apps/Error_Calculator/Error-Calculator/build/CMakeFiles/rebuild_cache.dir
